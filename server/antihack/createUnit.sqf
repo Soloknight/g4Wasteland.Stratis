@@ -3,7 +3,6 @@
 // ******************************************************************************************
 //	@file Name: createUnit.sqf
 //	@file Author: AgentRev
-//  @File updated: 01/25/2015
 
 if (!isServer) exitWith {};
 

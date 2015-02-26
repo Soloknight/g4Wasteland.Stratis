@@ -5,7 +5,6 @@
 //	@file Name: compileFuncs.sqf
 //	@file Author: AgentRev
 //	@file Created: 04/01/2014 02:51
-//  @file updated: 01/25/2015
 
 private ["_assignCompileKey", "_assignChecksum", "_assignPacketKey", "_rscParams", "_compileKey", "_checksum", "_packetKey"];
 
