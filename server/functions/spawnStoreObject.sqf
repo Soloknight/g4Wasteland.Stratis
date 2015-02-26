@@ -199,17 +199,19 @@ if (_key != "" && isPlayer _player && {_isGenStore || _isGunStore || _isVehStore
 					{
 						_object setAmmoCargo 5;
 					};
-					//Cael817, SNAFU, Added food and water to bought food sacks and barrels.				
-					case ({_object isKindOf _x} count ["Land_Sacks_goods_F"] > 0):	
+
+					// Add food to bought food sacks.
+					case ({_object isKindOf _x} count ["Land_Sacks_goods_F"] > 0):
 					{
 						_object setVariable ["food", 50, true];
 					};
-										
+					
+					// Add water to bought water barrels.
 					case ({_object isKindOf _x} count ["Land_BarrelWater_F"] > 0):
 					{
 						_object setVariable ["water", 50, true];
 					};
-					//END
+						
 					case (_object isKindOf "O_Heli_Transport_04_ammo_F"):
 					{
 						_object setAmmoCargo 10;
