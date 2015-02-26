@@ -50,7 +50,6 @@ playMusic "introSong"; // Play introSong defined in description.ext cfgSounds
 
 _control ctrlSetStructuredText (parseText _message);
 
-["See your STATS @ g4-gamers.com<br/>|g4| A3WASTELAND <br/>http://g4-gamers.com Click Leaderboard!<br/>", "Admins are always on our Teamspeak!"] spawn BIS_fnc_guiMessage;
 
 sleep 20;
 
