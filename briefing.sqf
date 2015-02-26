@@ -7,7 +7,7 @@ if (!hasInterface) exitWith {};
 
 waitUntil {!isNull player};
 
-player createDiarySubject ["features", "G4 Server Features"];
+player createDiarySubject ["features", "Server Features"];
 player createDiarySubject ["officers", "Server Admins"];
 player createDiarySubject ["addons", "Server Keys"];
 player createDiarySubject ["infos", "Infos and Help"];
@@ -108,6 +108,21 @@ player createDiaryRecord ["features",
 "
 ]];
 
+player createDiaryRecord ["changelog",
+[
+"v1.1",
+"
+<br/>[Added] New Player Loadout
+<br/>[Added] Added Camera fixes
+<br/>[Added] Improved player video settings
+<br/>[Added] Added Gut Feature
+<br/>[Changed] Added new hoster weapon image
+<br/>[Changed] Added Glitter Base
+<br/>[Changed] Added new gun dealer
+<br/>[Fixed] CVTV Saves and Direction
+<br/>[Fixed] Various other minor bugfixes and optimizations
+"
+]];
 player createDiaryRecord ["changelog",
 [
 "v1.1",
