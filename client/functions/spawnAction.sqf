@@ -22,16 +22,28 @@ spawnActionHandle = (_this select 1) spawn
 {
 	disableSerialization;
 
-	private ["_switch", "_data"];
+	private ["_switch", "_data", "_donatorLevel"];
 	_switch = _this select 0;
 	_data = [_this select 1, false];
-
+	_donatorLevel = player getVariable ["donator", 0];
+	
 	if (isNil "playerData_resetPos") then
 	{
 		// Deal with money here
 		_baseMoney = ["A3W_startingMoney", 100] call getPublicVar;
-		player setVariable ["cmoney", _baseMoney, true];
-		[] execVM "addons\gear\gearCheck.sqf"; //Cael817, SNAFU, Add extra gear at respawn.
+		switch (_donatorLevel) do
+		{
+			case 1: { player setVariable ["cmoney", _baseMoney + 1000, true]; [MF_ITEMS_CANNED_FOOD, 1] call mf_inventory_add; [MF_ITEMS_WATER, 1] call mf_inventory_add; };
+			case 2: { player setVariable ["cmoney", _baseMoney + 5000, true]; };
+			case 3: { player setVariable ["cmoney", _baseMoney + 10000, true]; };
+			case 4: { player setVariable ["cmoney", _baseMoney + 15000, true]; };
+			case 5: { player setVariable ["cmoney", _baseMoney + 7000, true]; };
+			case 6: { player setVariable ["cmoney", _baseMoney + 7000, true]; };
+			case 7: { player setVariable ["cmoney", _baseMoney + 7000, true]; };
+			case 8: { player setVariable ["cmoney", _baseMoney + 7000, true]; };
+			case 9: { player setVariable ["cmoney", _baseMoney + 15000, true]; };
+			default { player setVariable ["cmoney", _baseMoney, true]; };
+		};
 
 		[MF_ITEMS_CANNED_FOOD, 1] call mf_inventory_add;
 		[MF_ITEMS_WATER, 1] call mf_inventory_add;
