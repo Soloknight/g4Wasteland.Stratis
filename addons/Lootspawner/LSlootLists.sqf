@@ -48,10 +48,10 @@ lootWeapon_list =
 			"LMG_Zafir_F",
 			"Rangefinder",
 			"SMG_01_F",                         // Vermin .45 ACP
-			"SMG_02_F",                         // Sting 9mm
-			"srifle_EBR_F",
-			"srifle_GM6_F",
-			"srifle_LRR_F"
+			"SMG_02_F"                         // Sting 9mm
+			// "srifle_EBR_F",
+			// "srifle_GM6_F",
+			// "srifle_LRR_F"
 		]
 	],
 	[ // INDUSTRIAL
@@ -75,9 +75,9 @@ lootWeapon_list =
 			"arifle_MXC_F",
 			"arifle_MXM_F",
 			"arifle_MX_GL_F",
-			"Rangefinder",
-			"srifle_GM6_F",
-			"srifle_LRR_F"
+			"Rangefinder"
+			// "srifle_GM6_F",
+			// "srifle_LRR_F"
 		]
 	]
 ];
