@@ -29,6 +29,8 @@ _exclVehicleIDs = [];
 
 	if (!isNil "_class" && !isNil "_pos" && {count _pos == 3 && (_maxLifetime <= 0 || _hoursAlive < _maxLifetime) && (_maxUnusedTime <= 0 || _hoursUnused < _maxUnusedTime)}) then
 	{
+		if (isNil "_variables") then { _variables = [] };
+		
 		_vehCount = _vehCount + 1;
 		_valid = true;
 
@@ -117,7 +119,36 @@ _exclVehicleIDs = [];
 			_veh setVariable ["A3W_objectTextures", _objTextures, true];
 		};
 
-		{ _veh setVariable [_x select 0, _x select 1, true] } forEach _variables;
+		{ 
+			_var = _x select 0;
+			_value = _x select 1;
+
+			switch (_var) do
+			{
+				case "R3F_A3W_objectIDs":
+				{
+					// vehicle has objects stored in it that have been re-initialized in oLoad
+					diag_log format ["[INFO] vLoad for vehicle with ID=%1 R3F_A3W_objectIDs set & containing objectIDs='%2'",_vehicleID, _value];
+					// get the object(s) matching this vehicleID in A3W_objectsInVehicles : [vehicleID, _object];
+					_objectsInVehicle = [A3W_objectsInVehicles, {_x select 0 == _vehicleID}] call BIS_fnc_conditionalSelect;
+					
+					diag_log format ["[INFO] vLoad got back '%1' from conditional select using _vehicleID=%2", _objectsInVehicle];
+					diag_log format ["[INFO] vLoad got back '%1' from loaded R3F_A3W_objectIDs array", _value];
+					
+					_objects_charges = [];
+					{
+						_object = _x select 1;  // the stored object
+						_objects_charges = _objects_charges + [_object];
+						_object setVariable ["R3F_LOG_est_transporte_par", _veh, true];
+					} forEach _objectsInVehicle;
+					_veh setVariable ["R3F_LOG_objets_charges", _objects_charges, true];
+				
+					diag_log format ["[INFO] vLoad at end of processing for vehicleID=%1 var R3F_LOG_objets_charges='%2'", _vehicleID, _veh getVariable "R3F_LOG_objets_charges"];
+				};
+				default {_veh setVariable [_x select 0, _x select 1, true] };
+			};
+			 
+		} forEach _variables;
 
 		clearWeaponCargoGlobal _veh;
 		clearMagazineCargoGlobal _veh;
@@ -179,7 +210,7 @@ _exclVehicleIDs = [];
 	};
 } forEach _vehicles;
 
-diag_log format ["A3Wasteland - world persistence loaded %1 vehicles from %2", _vehCount, call A3W_savingMethodName];
+diag_log format ["A3Wasteland - ********************** world persistence loaded %1 vehicles from %2", _vehCount, call A3W_savingMethodName];
 
 fn_deleteVehicles = [_methodDir, "deleteVehicles.sqf"] call mf_compile;
 _exclVehicleIDs call fn_deleteVehicles;

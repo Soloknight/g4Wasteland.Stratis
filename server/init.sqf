@@ -89,6 +89,7 @@ forEach
 	"A3W_showGunStoreStatus",
 	"A3W_gunStoreIntruderWarning",
 	"A3W_playerSaving",
+	"A3W_territorySaving",
 	"A3W_combatAbortDelay",
 	"A3W_unlimitedStamina",
 	"A3W_bleedingTime",
@@ -103,6 +104,10 @@ forEach
 	"A3W_purchasedVehicleSaving",
 	"A3W_missionVehicleSaving",
 	"A3W_missionFarAiDrawLines",
+	"A3W_vehicleThermals",
+	"A3W_firstPersonCamOnFoot",
+	"A3W_firstPersonCamNotDriver",
+	"A3W_resupplyCostPR",
 	"A3W_atmEnabled",
 	"A3W_atmMaxBalance",
 	"A3W_atmTransferFee",
@@ -110,17 +115,9 @@ forEach
 	"A3W_atmEditorPlacedOnly",
 	"A3W_atmMapIcons",
 	"A3W_atmRemoveIfDisabled",
-	"A3W_extDB_PlayerSave_ServerID",
-	"A3W_extension",
-	"A3W_vehicleThermals",
-	"A3W_firstPersonCamOnFoot",
-	"A3W_firstPersonCamNotDriver",
-	"A3W_resupplyCostPR",
-	"A3W_territoryAllowed",
 	"A3W_tkAutoKickEnabled",
 	"A3W_tkKickAmount",
 	"A3W_donatorEnabled"
-	
 ];
 
 ["A3W_join", "onPlayerConnected", { [_id, _uid, _name] spawn fn_onPlayerConnected }] call BIS_fnc_addStackedEventHandler;
@@ -137,14 +134,14 @@ vehicleThermalsOn = ["A3W_vehicleThermals"] call isConfigOn;
 
 _purchasedVehicleSavingOn = ["A3W_purchasedVehicleSaving"] call isConfigOn;
 _missionVehicleSavingOn = ["A3W_missionVehicleSaving"] call isConfigOn;
-
+_territorySavingOn = ["A3W_territorySaving"] call isConfigOn;
 _objectSavingOn = (_baseSavingOn || _boxSavingOn || _staticWeaponSavingOn || _cameraSavingOn || _warchestSavingOn || _warchestMoneySavingOn || _beaconSavingOn);
 _vehicleSavingOn = (_purchasedVehicleSavingOn || _purchasedVehicleSavingOn);
 
 _setupPlayerDB = scriptNull;
 
 // Do we need any persistence?
-if (_playerSavingOn || _objectSavingOn || _vehicleSavingOn) then
+if (_playerSavingOn || _objectSavingOn || _vehicleSavingOn || _territorySavingOn) then
 {
 	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -214,6 +211,22 @@ if (_playerSavingOn || _objectSavingOn || _vehicleSavingOn) then
 
 	call compile preProcessFileLineNumbers format ["persistence\server\setup\%1\init.sqf", call A3W_savingMethodDir];
 
+	A3W_territoriesReady = false;  // this will get set to true when monitorTerritories is ready to go
+	if (count (["config_territory_markers", []] call getPublicVar) > 0) then
+	{
+		diag_log "[INFO] A3W territory capturing is ENABLED";
+		[] execVM "territory\server\monitorTerritories.sqf";
+		
+		if (_territorySavingOn) then {
+			_setupTerritories = [] spawn compile preprocessFileLineNumbers "territory\server\setupTerritories.sqf"; // scriptDone stays stuck on false when using execVM on Linux
+		};
+	}
+	else
+	{
+		diag_log "[INFO] A3W territory capturing is DISABLED";
+	};
+	
+	
 	if (_playerSavingOn) then
 	{
 		_setupPlayerDB = [] spawn compile preprocessFileLineNumbers "persistence\server\players\setupPlayerDB.sqf"; // scriptDone stays stuck on false when using execVM on Linux
@@ -352,15 +365,7 @@ if (["A3W_serverSpawning"] call isConfigOn) then
 A3W_serverSpawningComplete = compileFinal "true";
 publicVariable "A3W_serverSpawningComplete";
 
-if (count (["config_territory_markers", []] call getPublicVar) > 0) then
-{
-	diag_log "[INFO] A3W territory capturing is ENABLED";
-	[] execVM "territory\server\monitorTerritories.sqf";
-}
-else
-{
-	diag_log "[INFO] A3W territory capturing is DISABLED";
-};
+
 
 // Consolidate all store NPCs in a single group
 [] spawn

@@ -15,7 +15,7 @@ setViewDistance 1000;
 setObjectViewDistance 900;
 setTerrainGrid 40;
 	
-[format ['Hello %1! <br/>Please visit the change log for updates.<br/>Have fun and play fair!', name player], "Welcome to g4-gamers.com Stratis"] spawn BIS_fnc_guiMessage;
+[format ['Hello %1! <br/>Please DO NOT Spam the Sidechat, use Groups.<br/>Have fun and play fair!', name player], "Welcome to g4-gamers.com Altis"] spawn BIS_fnc_guiMessage;
 	
 [] execVM "addons\credits\welcome.sqf";
 

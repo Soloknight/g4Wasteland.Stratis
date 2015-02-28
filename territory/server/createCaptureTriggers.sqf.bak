@@ -8,7 +8,6 @@
 # @@Modify Date: 2013-09-15 22:35:19
 # @@Function: Creates server-side capture zone triggers
 #*********************************************************/
-private ["_marker", "_trig"];
 
 if (!isServer) exitWith {};
 
@@ -25,7 +24,7 @@ if (!isServer) exitWith {};
 		}
 		else
 		{
-			diag_log format ["[WARN]: No config_territory_markers definition for marker '%1'. Deleting it!", _marker];
+			diag_log format ["WARNING: No config_territory_markers definition for marker '%1'. Deleting it!", _marker];
 			deleteMarker _marker;
 		};
 	};
