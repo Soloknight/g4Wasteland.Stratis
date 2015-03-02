@@ -97,8 +97,8 @@ switch (["A3W_vehicleLoot", 1] call getPublicVar) do
 		_car addItemCargoGlobal ["FirstAidKit", 1];
 
 		if(_attachmentAmount < 1) then { 
-			_car addItemCargoGlobal [_additionOne, 1];
-			_car addItemCargoGlobal [_additionTwo, 1];
+		_car addItemCargoGlobal [_additionOne, 1];
+		_car addItemCargoGlobal [_additionTwo, 1];
 		};
 
 		if (_nightTime) then { _car addMagazineCargoGlobal [_additionThree, 1] };
@@ -128,8 +128,8 @@ switch (["A3W_vehicleLoot", 1] call getPublicVar) do
 		_car addItemCargoGlobal ["FirstAidKit", 2];
 
 		if(_attachmentAmount < 1) then { 
-			_car addItemCargoGlobal [_additionOne, 2];
-			_car addItemCargoGlobal [_additionTwo, 2];
+		_car addItemCargoGlobal [_additionOne, 2];
+		_car addItemCargoGlobal [_additionTwo, 2];
 		};
 
 		if (_nightTime) then { _car addMagazineCargoGlobal [_additionThree, 1] };

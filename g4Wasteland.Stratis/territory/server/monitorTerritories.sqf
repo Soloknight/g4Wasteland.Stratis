@@ -684,10 +684,10 @@ while {true} do
 		A3W_currentTerritoryOwners = _newTerritoryOwners;
 		publicVariable "A3W_currentTerritoryOwners";
 		
-		diag_log text "[INFO] monitorTerritories: A3W_currentTerritoryOwners was updated:";
-		{
-			diag_log format ["    %1                  %2",_x select 0, _x select 1];   
-		} foreach A3W_currentTerritoryOwners;
+		//diag_log text "[INFO] monitorTerritories: A3W_currentTerritoryOwners was updated:";
+		//{
+		//	diag_log format ["    %1                  %2",_x select 0, _x select 1];   
+		//} foreach A3W_currentTerritoryOwners;
 	};
 
 	// Reconcile old/new contested occupiers

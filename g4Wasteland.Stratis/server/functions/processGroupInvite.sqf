@@ -6,7 +6,7 @@
 //  @file Modified by Munch to handle Indy group changes and modify territory ownerships, if any
 //  Note: pvar_processGroupInvite = ["accept", _playerUID, _oldGroup, _newGroup]
 
-private ["_type", "_sender", "_receiver", "_invite", "_receiverUID", "_oldGroup", "_newGroup", "_newTerritories", "_oldTerritories", "_senderUID", "_playerUID"];
+private ["_type", "_sender", "_receiver", "_invite", "_receiverUID", "_oldGroup", "_newGroup", "_newTerritories", "_oldTerritories", "_senderUID", "_playerUID", "_player", "_oldGroups"];
 
 diag_log format ["{INFO] processGroupInvite invoked with _this='%1'",_this];
 
@@ -142,17 +142,27 @@ switch (_type) do
 	case "leave":
 	{
 		// pvar_processGroupInvite = ["leave", player, _oldGroup];
-		_oldGroup = [_this, 1, "", [""]] call BIS_fnc_param;
-		_player = [_this, 2, "", [""]] call BIS_fnc_param;
-
-		diag_log format ["[INFO] processGroupInvite handling 'leave' of player %1 from group %2", _player, _oldGroup];
-
+		_playerUID = [_this, 1, "", [""]] call BIS_fnc_param;
+		//_oldGroup = [_this, 2, grpNull, [grpNull]] call BIS_fnc_param;
+		_oldGroup =  [_this, 2, grpNull, [""]] call BIS_fnc_param;
+		_player=objNull;
 		
-		{ if (getPlayerUID _x == _receiverUID) exitWith { _target = _x } } forEach (call allPlayers);
-		{ if (getPlayerUID _x == _senderUID) exitWith { _group = group _x } } forEach (call allPlayers);
+		diag_log format ["[INFO] processGroupInvite handling 'leave' of player %1 from group %2, target=%3", _playerUID, _oldGroup, _target];
+		
+		{ if (getPlayerUID _x == _playerUID) exitWith 
+			{ 
+				_player = _x;
+				diag_log format ["[INFO] checking _target=%1 with UID=%2 against _playerUID=%3",_player, getPlayerUID _x, _playerUID];
+			} 
+		} forEach (call allPlayers);
+		
+		//{ if (getPlayerUID _x == _senderUID) exitWith { _group = group _x } } forEach (call allPlayers);
 
+		diag_log format ["[INFO] processGroupInvite after lookup, target=%1 on side %2", _player, side _player];
+		
+		
 		// Handling for independents
-		if (!(side _target in [OPFOR,BLUFOR])) then 
+		if (!(side _player in [OPFOR,BLUFOR])) then 
 		{
 			// find territories owned by the _oldGroup that the player captured
 			
@@ -163,7 +173,7 @@ switch (_type) do
 			// remove the player from the currentTerritoryDetails & persistence recs for this group
 			_oldTerritories = _oldGroup getVariable ["currentTerritories", []];
 
-			diag_log format ["[INFO] processGroupInvite handling 'leave' removing %1 from group ownership of:  %2", _target, _oldTerritories];
+			diag_log format ["[INFO] processGroupInvite handling 'leave' removing %1 from group ownership of:  %2", _player, _oldTerritories];
 			
 			// indy player got kicked ... update his display to show he no longer has ownership of the group's territories
 			["pvar_updateTerritoryMarkers",  [_player, [_oldTerritories, false, side _player, false]]] call fn_publicVariableAll;

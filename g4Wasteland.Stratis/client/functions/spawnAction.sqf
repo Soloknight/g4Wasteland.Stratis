@@ -26,7 +26,7 @@ spawnActionHandle = (_this select 1) spawn
 	_switch = _this select 0;
 	_data = [_this select 1, false];
 	_donatorLevel = player getVariable ["donator", 0];
-	
+
 	if (isNil "playerData_resetPos") then
 	{
 		// Deal with money here

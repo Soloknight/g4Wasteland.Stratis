@@ -35,7 +35,7 @@ _player unlinkItem "ItemGPS";
 if (hmd _player != "") then { _player unlinkItem hmd _player };
 
 // Add NVG
-//_player linkItem "NVGoggles";
+// _player linkItem "NVGoggles";
 
 switch (_donatorLevel) do
 {
@@ -165,7 +165,7 @@ switch (_donatorLevel) do
 	};
 	case 8: // Diver
 	{
-		
+
 		_player forceAddUniform "U_I_Wetsuit";
 		_player addBackpack "B_Carryall_oli";
 		_player addVest "V_RebreatherIA";

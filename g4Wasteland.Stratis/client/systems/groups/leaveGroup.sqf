@@ -10,12 +10,12 @@
 private ["_oldGroup", "_playerUID"];
 
 _oldGroup = group player;
-
+_playerUID = getPlayerUID player;
 [player] join grpNull;
 player setVariable ["currentGroupRestore", grpNull, true];
 player setVariable ["currentGroupIsLeader", false, true];
 
 // have the server remove the player from territory ownerships
-pvar_processGroupInvite = ["leave", player, _oldGroup];
+pvar_processGroupInvite = ["leave", _playerUID, _oldGroup];
 publicVariableServer "pvar_processGroupInvite";
 

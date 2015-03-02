@@ -147,7 +147,7 @@ class Mission
 	class Intel
 	{
 		briefingName="G4Wasteland Stratis v1.1 Ver. g4-1.5"";
-		overviewText="Wasteland survival sandbox by Team Wasteland - visit A3Wasteland.com for more details";
+		overviewText="Wasteland survival sandbox by g4-gamers.com";
 		resistanceWest=0;
 		startWeather=0.10000001;
 		startWind=0.30000001;

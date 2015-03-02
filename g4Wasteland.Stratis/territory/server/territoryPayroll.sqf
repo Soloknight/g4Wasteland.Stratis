@@ -129,8 +129,10 @@ while {true} do
 			diag_log format ["[INFO] territoryPayroll: $%1 payout to team '%2' with %3 caps made", _money, _team, _count];
 			[[_message, _money], "A3W_fnc_territoryActivityHandler", _team, false] call A3W_fnc_MP;
 		} else {
-			diag_log format ["[INFO] territoryPayroll: $%1 payout to Indy group '%2' with %3 caps made", _money, _group, _count];
-			[[_message, _money], "A3W_fnc_territoryActivityHandler", _group, false] call A3W_fnc_MP;
+			if (!(_group isEqualTo grpNull)) then {
+				diag_log format ["[INFO] territoryPayroll: $%1 payout to Indy group '%2' with %3 caps made", _money, _group, _count];
+				[[_message, _money], "A3W_fnc_territoryActivityHandler", _group, false] call A3W_fnc_MP;
+			}
 		};
 	} forEach _payouts;
 };

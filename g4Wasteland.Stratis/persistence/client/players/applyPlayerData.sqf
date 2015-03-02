@@ -31,8 +31,8 @@ removeHeadgear player;
 		{
 			// diag_log "EMPTY VALUE DETECTED";
 			// Null Value
-			switch (_name) do
-			{
+	switch (_name) do
+	{
 				case "Backpack":
 				{
 					// diag_log "Removed Backpack";
@@ -63,62 +63,62 @@ removeHeadgear player;
 		case "Uniform":
 		{
 			// If uniform cannot be worn by player due to different team, try to convert it, else give default instead
-			if (player isUniformAllowed _value) then
-			{
-				player addUniform _value;
-			}
-			else
-			{
-				_newUniform = [player, _value] call uniformConverter;
-
-				if (player isUniformAllowed _newUniform) then
+				if (player isUniformAllowed _value) then
 				{
-					player addUniform _newUniform;
+					player addUniform _value;
 				}
 				else
 				{
-					player addUniform ([player, "uniform"] call getDefaultClothing);
-				}
+					_newUniform = [player, _value] call uniformConverter;
+
+					if (player isUniformAllowed _newUniform) then
+					{
+						player addUniform _newUniform;
+					}
+					else
+					{
+						player addUniform ([player, "uniform"] call getDefaultClothing);
+					}
+				};
 			};
-		};
 		case "Vest": {  player addVest _value };
 		case "Backpack":
 		{
 			// diag_log "Removed Backpack";
 			removeBackpack player;
 
-			if (_value isKindOf "Weapon_Bag_Base" && !(_value isKindOf "B_UAV_01_backpack_F")) then
-			{
+				if (_value isKindOf "Weapon_Bag_Base" && !(_value isKindOf "B_UAV_01_backpack_F")) then
+				{
 				// diag_log "Add Default Backpack";
-				player addBackpack "B_AssaultPack_rgr"; // NO SOUP FOR YOU
-			}
-			else
-			{
+					player addBackpack "B_AssaultPack_rgr"; // NO SOUP FOR YOU
+				}
+				else
+				{
 				// diag_log "Add Backpack";
-				player addBackpack _value;
+					player addBackpack _value;
+				};
 			};
-		};
 		case "Goggles": { player addGoggles _value };
 		case "Headgear":
 		{
 			// If wearing one of the default headgears, give the one belonging to actual team instead
-			_defHeadgear = [player, "headgear"] call getDefaultClothing;
-			_defHeadgears =
-			[
-				[typeOf player, "headgear", BLUFOR] call getDefaultClothing,
-				[typeOf player, "headgear", OPFOR] call getDefaultClothing,
-				[typeOf player, "headgear", INDEPENDENT] call getDefaultClothing
-			];
+				_defHeadgear = [player, "headgear"] call getDefaultClothing;
+				_defHeadgears =
+				[
+					[typeOf player, "headgear", BLUFOR] call getDefaultClothing,
+					[typeOf player, "headgear", OPFOR] call getDefaultClothing,
+					[typeOf player, "headgear", INDEPENDENT] call getDefaultClothing
+				];
 
-			if (_value != _defHeadgear && {_defHeadgear != ""} && {{_value == _x} count _defHeadgears > 0}) then
-			{
-				player addHeadgear _defHeadgear;
-			}
-			else
-			{
-				player addHeadgear _value;
+				if (_value != _defHeadgear && {_defHeadgear != ""} && {{_value == _x} count _defHeadgears > 0}) then
+				{
+					player addHeadgear _defHeadgear;
+				}
+				else
+				{
+					player addHeadgear _value;
+				};
 			};
-		};
 		case "LoadedMagazines":
 		{
 			player addBackpack "B_Carryall_Base"; // temporary backpack to hold mags
