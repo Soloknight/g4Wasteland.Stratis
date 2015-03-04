@@ -90,8 +90,10 @@ player createDiaryRecord ["features",
 <br/> within 250 meters of ANY store, PERIOD!!!
 <br/>
 <br/> ***  Persistence Settings  ***
+<br/> -- Territory captures persist through restarts
 <br/> -- Base building is turned ON!
 <br/> -- Purchased vehicles DO save!
+<br/> ---- as do objects saved inside of them
 <br/> ---- Purchased vehicles set to be deleted
 <br/> ---- after 24 hours of inactivity!
 <br/>
@@ -108,24 +110,21 @@ player createDiaryRecord ["features",
 "
 ]];
 
+
 player createDiaryRecord ["changelog",
 [
-"v1.1",
+"g4-gamers v1.5",
 "
-<br/>[Added] New Player Loadout
-<br/>[Added] Added Camera fixes
-<br/>[Added] Improved player video settings
-<br/>[Added] Added Gut Feature
-<br/>[Changed] Added new hoster weapon image
-<br/>[Changed] Added Glitter Base
-<br/>[Changed] Added new gun dealer
-<br/>[Fixed] CVTV Saves and Direction
-<br/>[Fixed] Various other minor bugfixes and optimizations
+<br/>[Added] Territory capture status persistence through server restarts
+<br/>[Added] In-vehicle object persistence through server restarts
+<br/>[Added] Support for donator loadouts
+<br/>[Fixed] Issue with previous territory captures not applying on Independent player re-joins
 "
 ]];
+
 player createDiaryRecord ["changelog",
 [
-"v1.1",
+"A3W v1.1",
 "
 <br/>[Added] ATMs
 <br/>[Added] Union Jack vehicle color
@@ -146,8 +145,8 @@ player createDiaryRecord ["changelog",
 [
 "g4 update 12.24.2014",
 "
-<br/> [Added] CVTV Cameras in general Store
-<br/> [Added] CVTV Laptop in general Store
+<br/> [Added] CCTV Cameras in general Store
+<br/> [Added] CCTV Laptop in general Store
 <br/> [Added] Tron Light Suit
 <br/> [Fixed] Painkiller BE Filter 
 <br/> [Fixed] CVTV Camera and Laptop BE Filter
@@ -170,7 +169,7 @@ player createDiaryRecord ["changelog",
 
 player createDiaryRecord ["changelog",
 [
-"v1.0b",
+"A3W v1.0b",
 "
 <br/> [Added] Helicopters DLC content
 <br/> [Added] Revamped respawn menu
@@ -194,7 +193,7 @@ player createDiaryRecord ["changelog",
 
 player createDiaryRecord ["changelog",
 [
-"v1.0",
+"A3W v1.0",
 "
 <br/> [Added] Custom scoreboard
 <br/> [Added] Mission and store vehicle saving
@@ -213,7 +212,7 @@ player createDiaryRecord ["changelog",
 
 player createDiaryRecord ["changelog",
 [
-"0.9h",
+"A3W v0.9h",
 "
 <br/> [Added] Custom revive system based on Farooq's Revive
 <br/> [Added] Territory payroll at regular intervals
@@ -273,7 +272,7 @@ player createDiaryRecord ["changelog",
 
 player createDiaryRecord ["changelog",
 [
-"0.9g",
+"A3W v0.9g",
 "
 <br/> [Added] - Vehicle stores
 <br/> [Added] - New lootspawner by Na_Palm, stuff in ALL buildings
@@ -315,7 +314,7 @@ player createDiaryRecord ["changelog",
 
 player createDiaryRecord ["changelog",
 [
-"0.9f",
+"A3W v0.9f",
 "
 <br/> [Added] - Money missions
 <br/> [Added] - Sell Crate Items option at stores when moving crate
@@ -330,7 +329,7 @@ player createDiaryRecord ["changelog",
 
 player createDiaryRecord ["changelog",
 [
-"0.9e",
+"A3W v0.9e",
 "
 <br/> [Added] - Territory system
 <br/> [Added] - Jumping option (step over while running)
@@ -344,7 +343,7 @@ player createDiaryRecord ["changelog",
 
 player createDiaryRecord ["changelog",
 [
-"0.9d",
+"A3W v0.9d",
 "
 <br/> [Added] - Store object purchases
 <br/> [Changed] - New UI by KoS
@@ -353,7 +352,7 @@ player createDiaryRecord ["changelog",
 
 player createDiaryRecord ["changelog",
 [
-"0.9c",
+"A3W v0.9c",
 "
 <br/> [Changed] - Instant money pickup and drop
 <br/> [Changed] - Increased plane and heli spawning odds
@@ -364,9 +363,9 @@ player createDiaryRecord ["changelog",
 
 player createDiaryRecord ["changelog",
 [
-"0.9b",
+"A3W v0.9b",
 "
-<br/> [Initial release] - Welcome to stratis!
+<br/> [Initial release] - Welcome to Altis!
 "
 ]];
 
@@ -375,6 +374,10 @@ player createDiaryRecord ["credits",
 [
 "Credits",
 "
+<br/><font size='16' color='#BBBBBB'>Enhancements by g4-gamers.com:</font>
+<br/>	* Soloknight 
+<br/>	* Munch 
+<br/>
 <br/><font size='16' color='#BBBBBB'>Developed by A3Wasteland.com:</font>
 <br/>	* AgentRev (TeamPlayerGaming)
 <br/>	* JoSchaap (GoT/Tweakers.net)

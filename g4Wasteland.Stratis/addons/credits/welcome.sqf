@@ -42,7 +42,7 @@ waitUntil {alive player};
 sleep 15; //Wait in seconds before the credits start after player IS ingame
 
 _role1 = "Welcome back to";
-_role1names = ["the G4 wasteland Statis server 1 / V1.5"];
+_role1names = ["the G4 wasteland Stratis server 1 / v1.5"];
 _role2 = "Thanks to all the players";
 _role2names = ["For making this a awesome server!"];
 _role3 = "Our G4 TS3 server info is:";

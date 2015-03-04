@@ -72,4 +72,4 @@ _createRandomObject =
 	waitUntil {scriptDone _x};
 } forEach _spawnedObjects;
 
-diag_log format["WASTELAND - Object spawning completed - %1 Objects Spawned on Altis",_counter];
+diag_log format["WASTELAND - Object spawning completed - %1 Objects Spawned on Stratis",_counter];

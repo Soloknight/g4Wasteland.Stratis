@@ -146,8 +146,8 @@ class Mission
 	randomSeed=14957468;
 	class Intel
 	{
-		briefingName="G4Wasteland Stratis v1.1 Ver. g4-1.5"";
-		overviewText="Wasteland survival sandbox by g4-gamers.com";
+		briefingName="G4Wasteland Stratis G4G";
+		overviewText="Wasteland survival sandbox by G4G - visit g4-gamers.com for more details";
 		resistanceWest=0;
 		startWeather=0.10000001;
 		startWind=0.30000001;
