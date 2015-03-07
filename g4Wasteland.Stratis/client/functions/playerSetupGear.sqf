@@ -41,165 +41,266 @@ switch (_donatorLevel) do
 {
 	case 1:
 	{
-		_player addBackpack "B_AssaultPack_rgr";
-		_player addVest "V_BandollierB_cbr";
-		_player addMagazine "11Rnd_45ACP_Mag";
-		_player addWeapon "hgun_Pistol_heavy_01_F";
-		_player addMagazine "11Rnd_45ACP_Mag";
-		_player addMagazine "11Rnd_45ACP_Mag";
-		_player addMagazine "11Rnd_45ACP_Mag";
-		_player addItem "FirstAidKit";
-		_player addItem "NVGoggles";
-		_player addWeapon "Binocular";
-		_player selectWeapon "hgun_Pistol_heavy_01_F";
+			_player addBackpack "B_Bergen_sgg";
+			if (["_diver_", typeOf _player] call fn_findString != -1) then {} else 
+			{
+			_player addVest "V_HarnessOGL_brn";
+			};
+			// _player addVest "V_PlateCarrierIAGL_dgtl";
+			// _player forceAddUniform "U_BG_Guerilla2_1";
+			_player addWeapon "hgun_Pistol_heavy_01_F";
+			// _player addPrimaryWeaponItem "optic_Arco";
+			_player addMagazine "11Rnd_45ACP_Mag";
+			_player addMagazine "11Rnd_45ACP_Mag";
+			// _player addItemtoBackpack "HandGrenade";
+			// _player addItemtoBackpack "HandGrenade";
+			// _player addWeapon "hgun_mas_glocksf_F";
+			_player addHandgunItem "optic_MRD";
+			// _player addHandgunItem "optic_Yorris";
+			_player addMagazine "11Rnd_45ACP_Mag";
+			_player addMagazine "11Rnd_45ACP_Mag";
+			_player addItem "Medikit";
+			_player addWeapon "Rangefinder";
+			_player addItemToBackpack "FirstAidKit";
+			_player addItemToBackpack "FirstAidKit";
+			// _player addHeadgear "H_HelmetB";
+			_player addGoggles "G_mas_wpn_wrap_mask_t";
+			_player linkItem "ItemGPS";
+			_player selectWeapon "hgun_Pistol_heavy_01_F";
 	};
 	case 2:
 	{
-		_player addBackpack "B_FieldPack_khk";
-		_player addVest "V_HarnessOGL_brn";
-		_player addHeadgear "H_HelmetB";
-		_player addMagazine "11Rnd_45ACP_Mag";
-		_player addWeapon "hgun_Pistol_heavy_01_F";
-		_player addHandgunItem "optic_MRD";
-		_player addMagazine "11Rnd_45ACP_Mag";
-		_player addMagazine "11Rnd_45ACP_Mag";
-		_player addMagazine "11Rnd_45ACP_Mag";
-		_player addItem "FirstAidKit";
-		_player addItem "NVGoggles";
-		_player addWeapon "Rangefinder";
-		_player linkItem "ItemGPS";
-		_player selectWeapon "hgun_Pistol_heavy_01_F";
+			_player addBackpack "B_FieldPack_khk";
+			if (["_diver_", typeOf _player] call fn_findString != -1) then {} else 
+			{
+			_player addVest "V_HarnessOGL_brn";
+			};
+			// _player addVest "V_PlateCarrierIAGL_dgtl";
+			// _player forceAddUniform "U_BG_Guerilla2_1";
+			_player addWeapon "hgun_Pistol_heavy_01_F";
+			// _player addPrimaryWeaponItem "optic_Arco";
+			_player addMagazine "11Rnd_45ACP_Mag";
+			_player addMagazine "11Rnd_45ACP_Mag";
+			// _player addItemtoBackpack "HandGrenade";
+			// _player addItemtoBackpack "HandGrenade";
+			// _player addWeapon "hgun_mas_glocksf_F";
+			_player addHandgunItem "optic_MRD";
+			// _player addHandgunItem "optic_Yorris";
+			_player addMagazine "11Rnd_45ACP_Mag";
+			_player addMagazine "11Rnd_45ACP_Mag";
+			// _player addItem "Medikit";
+			_player addWeapon "Rangefinder";
+			_player linkItem "ItemGPS";
+			_player addItemToBackpack "FirstAidKit";
+			_player addItemToBackpack "FirstAidKit";
+			// _player addHeadgear "H_HelmetB";
+			_player addItem "NVGoggles";
+			_player addGoggles "G_mas_wpn_wrap_mask_t";			
+			_player selectWeapon "hgun_Pistol_heavy_01_F";
 	};
 	case 3:
 	{
-		_player addBackpack "B_Kitbag_rgr";
-		_player addVest "V_TacVest_brn";
-		_player addHeadgear "H_HelmetSpecB_blk";
-		_player addMagazine "11Rnd_45ACP_Mag";
-		_player addWeapon "hgun_Pistol_heavy_01_F";
-		_player addHandgunItem "optic_MRD";
-		_player addHandgunItem "muzzle_snds_acp";
-		_player addMagazine "11Rnd_45ACP_Mag";
-		_player addMagazine "11Rnd_45ACP_Mag";
-		_player addMagazine "11Rnd_45ACP_Mag";
-		_player addItem "FirstAidKit";
-		_player addItem "NVGoggles";
-		_player addWeapon "Laserdesignator";
-		_player linkItem "ItemGPS";
-		_player selectWeapon "hgun_Pistol_heavy_01_F";
+			_player addBackpack "B_Kitbag_rgr";
+			if (["_diver_", typeOf _player] call fn_findString != -1) then {} else 
+			{
+			_player addVest "V_TacVest_brn";
+			};
+			// _player forceAddUniform "U_BG_Guerilla2_1";
+			_player addWeapon "hgun_Pistol_heavy_01_F";
+			// _player addPrimaryWeaponItem "optic_Arco";
+			_player addMagazine "11Rnd_45ACP_Mag";
+			_player addMagazine "11Rnd_45ACP_Mag";
+			// _player addItemtoBackpack "HandGrenade";
+			// _player addItemtoBackpack "HandGrenade";
+			// _player addWeapon "hgun_mas_glocksf_F";
+			_player addHandgunItem "optic_MRD";
+			_player addHandgunItem "muzzle_snds_acp";
+			_player addMagazine "11Rnd_45ACP_Mag";
+			_player addMagazine "11Rnd_45ACP_Mag";
+			_player addItem "Medikit";
+			_player addWeapon "Laserdesignator";
+			_player linkItem "ItemGPS";
+			// _player addItemToBackpack "FirstAidKit";
+			// _player addItemToBackpack "FirstAidKit";
+			_player addHeadgear "H_HelmetSpecB_blk";
+			_player addItem "NVGoggles";
+			_player addGoggles "G_mas_wpn_wrap_mask_t";			
+			_player selectWeapon "hgun_Pistol_heavy_01_F";
 	};
 	case 4:
 	{
-		_player addBackpack "B_Carryall_oli";
-		_player addVest "V_PlateCarrier3_rgr";
-		_player addHeadgear "H_HelmetLeaderO_ocamo";
-		_player addMagazine "11Rnd_45ACP_Mag";
-		_player addWeapon "hgun_Pistol_heavy_01_F";
-		_player addHandgunItem "optic_MRD";
-		_player addHandgunItem "muzzle_snds_acp";
-		_player addMagazine "11Rnd_45ACP_Mag";
-		_player addMagazine "11Rnd_45ACP_Mag";
-		_player addMagazine "11Rnd_45ACP_Mag";
-		_player addItem "FirstAidKit";
-		_player addItem "NVGoggles";
-		_player addWeapon "Laserdesignator";
-		_player linkItem "ItemGPS";
-		_player selectWeapon "hgun_Pistol_heavy_01_F";	
+			_player addBackpack "B_Carryall_oli";
+			if (["_diver_", typeOf _player] call fn_findString != -1) then {} else 
+			{
+			_player addVest "V_PlateCarrier3_rgr";
+			};
+			// _player forceAddUniform "U_BG_Guerilla2_1";
+			_player addWeapon "hgun_Pistol_heavy_01_F";
+			// _player addPrimaryWeaponItem "optic_Arco";
+			_player addMagazine "11Rnd_45ACP_Mag";
+			_player addMagazine "11Rnd_45ACP_Mag";
+			// _player addItemtoBackpack "HandGrenade";
+			// _player addItemtoBackpack "HandGrenade";
+			// _player addWeapon "hgun_mas_glocksf_F";
+			_player addHandgunItem "optic_MRD";
+			_player addHandgunItem "muzzle_snds_acp";
+			_player addMagazine "11Rnd_45ACP_Mag";
+			_player addMagazine "11Rnd_45ACP_Mag";
+			_player addItem "Medikit";
+			_player addWeapon "Laserdesignator";
+			_player linkItem "ItemGPS";
+			// _player addItemToBackpack "FirstAidKit";
+			// _player addItemToBackpack "FirstAidKit";
+			_player addHeadgear "H_HelmetLeaderO_ocamo";
+			_player addItem "NVGoggles";
+			_player addGoggles "G_mas_wpn_wrap_mask_t";			
+			_player selectWeapon "hgun_Pistol_heavy_01_F";	
 	};
 	case 5: // Sniper
 	{
-		_player forceAddUniform "U_I_GhillieSuit";
-		_player addBackpack "B_Carryall_oli";
-		_player addVest "V_Chestrig_rgr";
-		//_player addHeadgear "H_HelmetLeaderO_ocamo";
-		_player addMagazine "11Rnd_45ACP_Mag";
-		_player addWeapon "hgun_Pistol_heavy_01_F";
-		_player addHandgunItem "optic_MRD";
-		_player addHandgunItem "muzzle_snds_acp";
-		_player addMagazine "11Rnd_45ACP_Mag";
-		_player addMagazine "11Rnd_45ACP_Mag";
-		_player addMagazine "11Rnd_45ACP_Mag";
-		_player addItem "FirstAidKit";
-		_player addItem "NVGoggles";
-		_player addWeapon "Laserdesignator";
-		_player linkItem "ItemGPS";
-		_player selectWeapon "hgun_Pistol_heavy_01_F";	
+			_player addBackpack "B_Carryall_oli";
+			if (["_diver_", typeOf _player] call fn_findString != -1) then {} else 
+			{
+			_player addVest "V_Chestrig_rgr";
+			};
+			_player forceAddUniform "U_I_GhillieSuit";
+			_player addWeapon "hgun_Pistol_heavy_01_F";
+			// _player addPrimaryWeaponItem "optic_Arco";
+			_player addMagazine "11Rnd_45ACP_Mag";
+			_player addMagazine "11Rnd_45ACP_Mag";
+			// _player addItemtoBackpack "HandGrenade";
+			// _player addItemtoBackpack "HandGrenade";
+			// _player addWeapon "";
+			_player addHandgunItem "optic_MRD";
+			_player addHandgunItem "muzzle_snds_acp";
+			_player addMagazine "11Rnd_45ACP_Mag";
+			_player addMagazine "11Rnd_45ACP_Mag";
+			_player addItem "Medikit";
+			_player addWeapon "Laserdesignator";
+			_player linkItem "ItemGPS";
+			// _player addItemToBackpack "FirstAidKit";
+			// _player addItemToBackpack "FirstAidKit";
+			_player addHeadgear "H_HelmetLeaderO_ocamo";
+			_player addItem "NVGoggles";
+			_player addGoggles "G_mas_wpn_wrap_mask_t";			
+			_player selectWeapon "hgun_Pistol_heavy_01_F";	
 	};
 	case 6: // Tron
 	{
-		_player forceAddUniform "U_B_Protagonist_VR";
-		_player addBackpack "B_Carryall_oli";
-		_player addVest "V_PlateCarrier3_rgr";
-		//_player addHeadgear "H_HelmetLeaderO_ocamo";
-		_player addMagazine "11Rnd_45ACP_Mag";
-		_player addWeapon "hgun_Pistol_heavy_01_F";
-		_player addHandgunItem "optic_MRD";
-		_player addHandgunItem "muzzle_snds_acp";
-		_player addMagazine "11Rnd_45ACP_Mag";
-		_player addMagazine "11Rnd_45ACP_Mag";
-		_player addMagazine "11Rnd_45ACP_Mag";
-		_player addItem "FirstAidKit";
-		_player addItem "NVGoggles";
-		_player addWeapon "Laserdesignator";
-		_player linkItem "ItemGPS";
-		_player selectWeapon "hgun_Pistol_heavy_01_F";	
+			_player addBackpack "B_Carryall_oli";
+			if (["_diver_", typeOf _player] call fn_findString != -1) then {} else 
+			{
+			_player addVest "V_PlateCarrier3_rgr";
+			};
+			_player forceAddUniform "U_B_Protagonist_VR";
+			_player addWeapon "hgun_Pistol_heavy_01_F";
+			// _player addPrimaryWeaponItem "optic_Arco";
+			_player addMagazine "11Rnd_45ACP_Mag";
+			_player addMagazine "11Rnd_45ACP_Mag";
+			// _player addItemtoBackpack "HandGrenade";
+			// _player addItemtoBackpack "HandGrenade";
+			// _player addWeapon "";
+			_player addHandgunItem "optic_MRD";
+			_player addHandgunItem "muzzle_snds_acp";
+			_player addMagazine "11Rnd_45ACP_Mag";
+			_player addMagazine "11Rnd_45ACP_Mag";
+			_player addItem "Medikit";
+			_player addWeapon "Laserdesignator";
+			_player linkItem "ItemGPS";
+			// _player addItemToBackpack "FirstAidKit";
+			// _player addItemToBackpack "FirstAidKit";
+			_player addHeadgear "H_CrewHelmetHeli_I";
+			_player addItem "NVGoggles";
+			_player addGoggles "G_mas_wpn_wrap_mask_t";			
+			_player selectWeapon "hgun_Pistol_heavy_01_F";	
 	};
 	case 7: // Pilot
 	{
-		_player forceAddUniform "U_I_pilotCoveralls";
-		_player addBackpack "B_Carryall_oli";
-		_player addVest "V_PlateCarrier3_rgr";
-		_player addHeadgear "H_PilotHelmetFighter_I";
-		_player addMagazine "11Rnd_45ACP_Mag";
-		_player addWeapon "hgun_Pistol_heavy_01_F";
-		_player addHandgunItem "optic_MRD";
-		_player addHandgunItem "muzzle_snds_acp";
-		_player addMagazine "11Rnd_45ACP_Mag";
-		_player addMagazine "11Rnd_45ACP_Mag";
-		_player addMagazine "11Rnd_45ACP_Mag";
-		_player addItem "FirstAidKit";
-		_player addItem "NVGoggles";
-		_player addWeapon "Laserdesignator";
-		_player linkItem "ItemGPS";
-		_player selectWeapon "hgun_Pistol_heavy_01_F";	
+			_player addBackpack "B_Carryall_oli";
+			if (["_diver_", typeOf _player] call fn_findString != -1) then {} else 
+			{
+			_player addVest "V_PlateCarrier3_rgr";
+			};
+			_player forceAddUniform "U_I_pilotCoveralls";
+			_player addWeapon "hgun_Pistol_heavy_01_F";
+			// _player addPrimaryWeaponItem "optic_Arco";
+			_player addMagazine "11Rnd_45ACP_Mag";
+			_player addMagazine "11Rnd_45ACP_Mag";
+			// _player addItemtoBackpack "HandGrenade";
+			// _player addItemtoBackpack "HandGrenade";
+			// _player addWeapon "";
+			_player addHandgunItem "optic_MRD";
+			_player addHandgunItem "muzzle_snds_acp";
+			_player addMagazine "11Rnd_45ACP_Mag";
+			_player addMagazine "11Rnd_45ACP_Mag";
+			_player addItem "Medikit";
+			_player addWeapon "Laserdesignator";
+			_player linkItem "ItemGPS";
+			// _player addItemToBackpack "FirstAidKit";
+			// _player addItemToBackpack "FirstAidKit";
+			_player addHeadgear "H_PilotHelmetFighter_I";
+			_player addItem "NVGoggles";
+			// _player addGoggles "G_mas_wpn_wrap_mask_t";			
+			_player selectWeapon "hgun_Pistol_heavy_01_F";	
 	};
 	case 8: // Diver
 	{
 
-		_player forceAddUniform "U_I_Wetsuit";
-		_player addBackpack "B_Carryall_oli";
-		_player addVest "V_RebreatherIA";
-		_player addMagazine "11Rnd_45ACP_Mag";
-		_player addWeapon "hgun_Pistol_heavy_01_F";
-		_player addHandgunItem "optic_MRD";
-		_player addHandgunItem "muzzle_snds_acp";
-		_player addMagazine "11Rnd_45ACP_Mag";
-		_player addMagazine "11Rnd_45ACP_Mag";
-		_player addMagazine "11Rnd_45ACP_Mag";
-		_player addItem "FirstAidKit";
-		_player addItem "NVGoggles";
-		_player addWeapon "Laserdesignator";
-		_player linkItem "ItemGPS";
-		_player selectWeapon "hgun_Pistol_heavy_01_F";	
+			_player addBackpack "B_Carryall_oli";
+			if (["_diver_", typeOf _player] call fn_findString != -1) then {} else 
+			{
+			_player addVest "V_RebreatherIA";
+			};
+			_player forceAddUniform "U_I_Wetsuit";
+			_player addWeapon "hgun_Pistol_heavy_01_F";
+			// _player addPrimaryWeaponItem "optic_Arco";
+			_player addMagazine "11Rnd_45ACP_Mag";
+			_player addMagazine "11Rnd_45ACP_Mag";
+			// _player addItemtoBackpack "HandGrenade";
+			// _player addItemtoBackpack "HandGrenade";
+			// _player addWeapon "";
+			_player addHandgunItem "optic_MRD";
+			_player addHandgunItem "muzzle_snds_acp";
+			_player addMagazine "11Rnd_45ACP_Mag";
+			_player addMagazine "11Rnd_45ACP_Mag";
+			_player addItem "Medikit";
+			_player addWeapon "Laserdesignator";
+			_player linkItem "ItemGPS";
+			// _player addItemToBackpack "FirstAidKit";
+			// _player addItemToBackpack "FirstAidKit";
+			// _player addHeadgear "H_PilotHelmetFighter_I";
+			_player addItem "NVGoggles";
+			// _player addGoggles "G_mas_wpn_wrap_mask_t";			
+			_player selectWeapon "hgun_Pistol_heavy_01_F";	
 	};
 	case 9: // Admin
 	{
-		_player forceAddUniform "U_B_Protagonist_VR";
-		_player addBackpack "B_Carryall_oli";
-		_player addVest "V_PlateCarrier3_rgr";
-		_player addHeadgear "H_CrewHelmetHeli_I";
-		_player addMagazine "11Rnd_45ACP_Mag";
-		_player addWeapon "hgun_Pistol_heavy_01_F";
-		_player addHandgunItem "optic_MRD";
-		_player addHandgunItem "muzzle_snds_acp";
-		_player addMagazine "11Rnd_45ACP_Mag";
-		_player addMagazine "11Rnd_45ACP_Mag";
-		_player addMagazine "11Rnd_45ACP_Mag";
-		_player addItem "FirstAidKit";
-		_player addItem "NVGoggles";
-		_player addWeapon "Laserdesignator";
-		_player linkItem "ItemGPS";
-		_player selectWeapon "hgun_Pistol_heavy_01_F";	
+			_player addBackpack "B_Carryall_oli";
+			if (["_diver_", typeOf _player] call fn_findString != -1) then {} else 
+			{
+			_player addVest "V_PlateCarrier3_rgr";
+			};
+			_player forceAddUniform "U_B_Protagonist_VR";
+			_player addWeapon "hgun_Pistol_heavy_01_F";
+			// _player addPrimaryWeaponItem "optic_Arco";
+			_player addMagazine "11Rnd_45ACP_Mag";
+			_player addMagazine "11Rnd_45ACP_Mag";
+			// _player addItemtoBackpack "HandGrenade";
+			// _player addItemtoBackpack "HandGrenade";
+			// _player addWeapon "";
+			_player addHandgunItem "optic_MRD";
+			_player addHandgunItem "muzzle_snds_acp";
+			_player addMagazine "11Rnd_45ACP_Mag";
+			_player addMagazine "11Rnd_45ACP_Mag";
+			_player addItem "Medikit";
+			_player addWeapon "Laserdesignator";
+			_player linkItem "ItemGPS";
+			// _player addItemToBackpack "FirstAidKit";
+			// _player addItemToBackpack "FirstAidKit";
+			_player addHeadgear "H_CrewHelmetHeli_I";
+			_player addItem "NVGoggles";
+			// _player addGoggles "G_mas_wpn_wrap_mask_t";			
+			_player selectWeapon "hgun_Pistol_heavy_01_F";	
 	};
 	default 
 	{
@@ -233,9 +334,6 @@ switch (true) do
 	};
 };
 
-//Fix Vests for Diver After Perk
-_vest = [_player, "vest"] call getDefaultClothing;
-if (_vest != "") then { _player addVest _vest };
 
 
 if (_player == player) then
