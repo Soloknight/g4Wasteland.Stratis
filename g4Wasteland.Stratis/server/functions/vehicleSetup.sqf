@@ -106,6 +106,14 @@ switch (true) do
 		_vehicle addMagazine "300Rnd_20mm_shells";
 		_vehicle removeWeaponTurret ["missiles_SCALPEL",[-1]];
 	};
+	case (_class isKindOf "B_Heli_Attack_01_F"):
+	{
+		// Remove OP DAGR missles, replace with DAR missles
+		_vehicle removeWeaponGlobal "missiles_DAGR";
+		_vehicle addWeaponGlobal "missiles_DAR";
+		_vehicle addMagazineGlobal "24Rnd_missiles";
+		_vehicle addMagazineGlobal "24Rnd_missiles";
+	};
 };
 
 _weapons = getArray (configFile >> "CfgVehicles" >> _class >> "weapons");

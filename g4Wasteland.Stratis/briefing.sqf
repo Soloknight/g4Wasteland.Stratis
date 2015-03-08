@@ -110,6 +110,16 @@ player createDiaryRecord ["features",
 "
 ]];
 
+player createDiaryRecord ["changelog",
+[
+"g4-gamers v1.5.1",
+"
+<br/>[Changed] Spawn beacon limit of 3 per player introduced
+<br/>[Changed] Removed OP DAGR missiles from Blackfoot, replaced with DAR rockets instead
+<br/>[Fixed] Selection criteria for object deletion set to include objects unused for 7 days
+<br/>[Fixed] Sounds for Device Detector and Boomerang
+"
+]];
 
 player createDiaryRecord ["changelog",
 [
