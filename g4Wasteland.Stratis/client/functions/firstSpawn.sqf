@@ -10,10 +10,10 @@ client_firstSpawn = true;
 
 [] execVM "client\functions\welcomeMessage.sqf";
 //set client side view distance on spawn
-systemChat format["Optimizing Video Settings"];
-setViewDistance 1000;
-setObjectViewDistance 900;
-setTerrainGrid 40;
+//systemChat format["Optimizing Video Settings"];
+//setViewDistance 1000;
+//setObjectViewDistance 900;
+//setTerrainGrid 40;
 	
 [format ['Hello %1! <br/>Please DO NOT Spam the Sidechat, use Groups.<br/>Have fun and play fair!', name player], "Welcome to g4-gamers.com Stratis"] spawn BIS_fnc_guiMessage;
 	
