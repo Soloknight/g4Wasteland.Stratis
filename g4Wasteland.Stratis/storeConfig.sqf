@@ -120,9 +120,9 @@ staticGunsArray = compileFinal str
 	["Mk32 GMG 20mm High tripod (NATO)", "B_GMG_01_high_F", 12000],
 	["Mk32 GMG 20mm High tripod (CSAT)", "O_GMG_01_high_F", 12000],
 	["Mk32 GMG 20mm High tripod (AAF)", "I_GMG_01_high_F", 12000],
-	["Mk6 Mortar (NATO)", "B_Mortar_01_F", 42500],
-	["Mk6 Mortar (CSAT)", "O_Mortar_01_F", 42500],
-	["Mk6 Mortar (AAF)", "I_Mortar_01_F", 42500]
+	["Mk6 Mortar (NATO)", "B_Mortar_01_F", 142500],
+	["Mk6 Mortar (CSAT)", "O_Mortar_01_F", 142500],
+	["Mk6 Mortar (AAF)", "I_Mortar_01_F", 142500]
 ];
 
 throwputArray = compileFinal str
@@ -692,16 +692,16 @@ helicoptersArray = compileFinal str
 
 planesArray = compileFinal str
 [
-	["A-143 Buzzard AA", "I_Plane_Fighter_03_AA_F", 120000, "vehicle"],
-	["A-143 Buzzard CAS", "I_Plane_Fighter_03_CAS_F", 120000, "vehicle"],
+	["A-143 Buzzard AA", "I_Plane_Fighter_03_AA_F", 86000, "vehicle"],
+	["A-143 Buzzard CAS", "I_Plane_Fighter_03_CAS_F", 860000, "vehicle"],
 	["A-164 Wipeout CAS", "B_Plane_CAS_01_F", 86000, "vehicle"],
 	["To-199 Neophron CAS", "O_Plane_CAS_02_F", 86000, "vehicle"],
-	["MQ4A Greyhawk ATGM UAV", "B_UAV_02_F", 75000, "vehicle"],
-	["MQ4A Greyhawk Bomber UAV", "B_UAV_02_CAS_F", 55000, "vehicle"], // Bomber UAVs are a lot harder to use, hence why they are cheaper than ATGMs
-	["K40 Ababil-3 ATGM UAV (CSAT)", "O_UAV_02_F", 60000, "vehicle"],
-	["K40 Ababil-3 Bomber UAV (CSAT)", "O_UAV_02_CAS_F", 50000, "vehicle"],
-	["K40 Ababil-3 ATGM UAV (AAF)", "I_UAV_02_F", 60000, "vehicle"],
-	["K40 Ababil-3 Bomber UAV (AAF)", "I_UAV_02_CAS_F", 50000, "vehicle"]
+	["MQ4A Greyhawk ATGM UAV", "B_UAV_02_F", 175000, "vehicle"],
+	["MQ4A Greyhawk Bomber UAV", "B_UAV_02_CAS_F", 65000, "vehicle"], // Bomber UAVs are a lot harder to use, hence why they are cheaper than ATGMs
+	["K40 Ababil-3 ATGM UAV (CSAT)", "O_UAV_02_F", 160000, "vehicle"],
+	["K40 Ababil-3 Bomber UAV (CSAT)", "O_UAV_02_CAS_F", 60000, "vehicle"],
+	["K40 Ababil-3 ATGM UAV (AAF)", "I_UAV_02_F", 160000, "vehicle"],
+	["K40 Ababil-3 Bomber UAV (AAF)", "I_UAV_02_CAS_F", 60000, "vehicle"]
 ];
 
 boatsArray = compileFinal str
@@ -781,7 +781,12 @@ colorsArray = compileFinal str
 			["Yellow Camo", _texDir + "camo_fuel.jpg"],
 			["Orange Camo", _texDir + "camo_fack.jpg"],
 			["Red Camo", _texDir + "camo_deser.jpg"],
-			["Pink Camo", _texDir + "camo_pank.jpg"]
+			["Pink Camo", _texDir + "camo_pank.jpg"],
+			["Sexy Desert Camo", _texDir + "sexy-desert-camo.jpg"],
+			["Sexy Ninja Camo", _texDir + "sexy-ninja-camo.jpg"],
+			["Sexy Pink Camo", _texDir + "sexy-pink-camo.jpg"],
+			["Sexy Urban Camo", _texDir + "sexy-urban-camo.jpg"],
+			["Sexy Woodland Camo", _texDir + "sexy-woodland-camo-v2.jpg"]
 		]
 	],
 	[ // Kart colors
