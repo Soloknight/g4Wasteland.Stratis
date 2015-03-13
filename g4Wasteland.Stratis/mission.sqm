@@ -145,7 +145,7 @@ class Mission
 	randomSeed=14957468;
 	class Intel
 	{
-		briefingName="G4G Wasteland Stratis v1.5";
+		briefingName="G4G Wasteland Stratis v1.6";
 		overviewText="Wasteland survival sandbox by G4G - visit g4-gamers.com for more details";
 		resistanceWest=0;
 		startWeather=0.10000001;
@@ -7231,7 +7231,7 @@ class Mission
 	};
 	class Markers
 	{
-		items=168;
+		items=169;
 		class Item0
 		{
 			position[]={4339.3457,226.45149,3824.2236};
@@ -8518,15 +8518,15 @@ class Mission
 		};
 		class Item165
 		{
-			position[]={5085.3735,171.59799,4314.1357};
-			name="TERRITORY_GLITTER_BASE";
-			markerType="ELLIPSE";
+			position[]={5081.9478,172.45143,4317.2188};
+			name="TERRITORY_KORANGAL_OUTPOST";
+			markerType="RECTANGLE";
 			type="Empty";
 			colorName="ColorYellow";
 			fillName="DiagGrid";
-			a=70;
-			b=70;
-			angle=100;
+			a=50;
+			b=50;
+			angle=132.08;
 		};
 		class Item166
 		{
@@ -8537,10 +8537,23 @@ class Mission
 		};
 		class Item167
 		{
-			position[]={5087.7876,172.07358,4319.6089};
-			name="GLitter Base";
-			text="Glitter Base";
+			position[]={5080.5073,174.69647,4353.6187};
+			name="Korangal Outpost";
+			text="Korangal Outpost";
 			type="mil_dot";
+			angle=487.19016;
+		};
+		class Item168
+		{
+			position[]={3506.5889,200.4431,4913.1177};
+			name="TERRITORY_ANUXA_TOWER";
+			markerType="RECTANGLE";
+			type="Empty";
+			colorName="ColorYellow";
+			fillName="DiagGrid";
+			a=20;
+			b=30;
+			angle=289.69101;
 		};
 	};
 };
