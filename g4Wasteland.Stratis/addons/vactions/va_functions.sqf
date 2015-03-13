@@ -1,3 +1,7 @@
+// Motavar@judgement.net:  Changed menu position from 10 to 0 to put vehicle lock/unlock at bottom of menu listing
+// Motavar@judgement.net:  This was recommended by the community as lock/unlock kills players who like to "get out" as top action
+
+
 if (!isNil "va_actions_functions_defined") exitWith {};
 diag_log format["Loading vehicle actions functions ..."];
 #include "macro.h"
@@ -41,7 +45,7 @@ va_player_exit = {
   //leave engine in same state after exiting
   def(_engine_state);
   _engine_state =  isEngineOn _vehicle;
-  _player action ["Eject",_vehicle];
+  _player action ["getOut",_vehicle];
   _vehicle engineOn _engine_state;
 };
 
@@ -91,7 +95,10 @@ va_flipped = {
   
   def(_pos);
   _pos = getPos _vehicle;
-  
+
+  //no unflip action if vehicle is in water
+  if (surfaceIsWater _pos) exitWith {false};
+
   def(_snormal);
   def(_vnormal);
   _snormal = surfaceNormal _pos;
@@ -111,34 +118,40 @@ va_unflip_action_available = {
   ([_vehicle] call va_flipped)
 };
 
-va_unflip_action = { _this spawn {
-  //player groupChat format["va_unflip_action %1",_this];
-  ARGVX3(3,_this,[]);
-  ARGVX3(0,_player,objNull);
-  ARGVX3(1,_vehicle,objNull);
-  
-  if (not(alive _player)) exitWith {};
-  
-  
-  def(_display_name);
-  _display_name = [typeOf _vehicle] call generic_display_name;
-  
-  init(_sleep,cfg_va_unflip_wait_time);
-  init(_dist,cfg_va_unflip_wait_distance);
-  
-  _player groupChat format["Unflipping the %1, wait for %2 seconds nearby.", _display_name, _sleep];
-  sleep _sleep;
+va_unflip_action = {
 
-  if ((_player distance _vehicle) > _dist) exitWith {
-    _player groupChat format["Could not unflip the %1, you must stay within %2 meters.", _display_name, _dist];
+  if (isSCRIPT(va_unflip_action_script) && {not(scriptDone va_unflip_action_script)}) exitWith {
+    player groupChat format["Vehicle unflip action is already in progress, please wait"];
   };
-  
-  [[_vehicle,[0,0,1]],"A3W_fnc_unflip",true,false] call BIS_fnc_MP;
 
-  
-  _player groupChat format["The %1 has been unflipped", _display_name];
-  
-};};
+  va_unflip_action_script = _this spawn {
+   //player groupChat format["va_unflip_action %1",_this];
+    ARGVX3(3,_this,[]);
+    ARGVX3(0,_player,objNull);
+    ARGVX3(1,_vehicle,objNull);
+
+    if (not(alive _player)) exitWith {};
+
+
+    def(_display_name);
+    _display_name = [typeOf _vehicle] call generic_display_name;
+
+    init(_sleep,cfg_va_unflip_wait_time);
+    init(_dist,cfg_va_unflip_wait_distance);
+
+    _player groupChat format["Unflipping the %1, wait for %2 seconds nearby.", _display_name, _sleep];
+    sleep _sleep;
+
+    if ((_player distance _vehicle) > _dist) exitWith {
+      _player groupChat format["Could not unflip the %1, you must stay within %2 meters.", _display_name, _dist];
+    };
+
+    [[_vehicle,surfaceNormal (getPos _vehicle)],"A3W_fnc_unflip",_vehicle] call BIS_fnc_MP;
+
+
+    _player groupChat format["The %1 has been unflipped", _display_name];
+  };
+};
 
 //place-holder in case people want to modify this condition
 va_information_action_available = { 
@@ -161,7 +174,8 @@ va_get_tag = {
   
   _tag = _vehicle getVariable "A3W_vehicleID"; //iniDB, and extDB
   if (isSTRING(_tag)) exitWith {_tag};
-  
+  if (not(isNil "_tag")) exitWith {str _tag};
+
   ""
 };
 
@@ -406,7 +420,7 @@ va_outside_owner_add_actions = {
     _member = _x;
   
     def(_action_id);
-    _action_id = _player addaction [format["<img image='addons\vactions\icons\pull.paa'/> Pull %1", (name _member)], {_this call va_pull_player_action;}, [_player, _vehicle, _member],10,false,false,"",
+    _action_id = _player addaction [format["<img image='addons\vactions\icons\pull.paa'/> Pull %1", (name _member)], {_this call va_pull_player_action;}, [_player, _vehicle, _member],0,false,false,"",
       format["([objectFromNetId %1, objectFromnetId %2, objectFromNetId %3] call va_pull_player_action_available)", str(netId _player), str(netId _vehicle), str(netId _member)]];
     va_outside_actions = va_outside_actions + [_action_id];
   };} forEach _crew;
@@ -429,23 +443,23 @@ va_outside_add_actions = {
   };
   
   //Add unfliping action
-  _action_id = _player addaction [format["<img image='addons\vactions\icons\flip.paa'/> Unflip %1", _display_name], {_this call va_unflip_action;}, [_player, _vehicle],10,false,false,"",
+  _action_id = _player addaction [format["<img image='addons\vactions\icons\flip.paa'/> Unflip %1", _display_name], {_this call va_unflip_action;}, [_player, _vehicle],0,false,false,"",
   format["([objectFromNetId %1] call va_unflip_action_available)",str(netId _vehicle)]];
   va_outside_actions = va_outside_actions + [_action_id];
   
 
   //Add view vehicle information action
-  _action_id = player addaction [format["<img image='addons\vactions\icons\info.paa'/> %1 info", _display_name], {_this call va_information_action;}, [_player, _vehicle],10,false,false,"",
+  _action_id = player addaction [format["<img image='addons\vactions\icons\info.paa'/> %1 info", _display_name], {_this call va_information_action;}, [_player, _vehicle],0,false,false,"",
   format["([objectFromNetId %1, objectFromNetId %2] call va_information_action_available)", str(netId _player), str(netId _vehicle)]];
   va_outside_actions = va_outside_actions + [_action_id];
   
   //Add vehicle lock action
-  _action_id = player addaction [format["<img image='addons\vactions\icons\lock.paa'/> Lock %1", _display_name], {_this call va_lock_action;}, [_player, _vehicle],10,false,false,"",
+  _action_id = player addaction [format["<img image='addons\vactions\icons\lock.paa'/> Lock %1", _display_name], {_this call va_lock_action;}, [_player, _vehicle],0,false,false,"",
   format["([objectFromNetId %1, objectFromNetId %2] call va_lock_action_available)", str(netId _player), str(netId _vehicle)]];
   va_outside_actions = va_outside_actions + [_action_id];
   
   //Add vehicle unlock action
-  _action_id = player addaction [format["<img image='addons\vactions\icons\key.paa'/> Unlock %1", _display_name], {_this call va_unlock_action;}, [_player, _vehicle],10,false,false,"",
+  _action_id = player addaction [format["<img image='addons\vactions\icons\key.paa'/> Unlock %1", _display_name], {_this call va_unlock_action;}, [_player, _vehicle],0,false,false,"",
   format["([objectFromNetId %1, objectFromNetId %2] call va_unlock_action_available)", str(netId _player), str(netId _vehicle)]];
   va_outside_actions = va_outside_actions + [_action_id];
 };
@@ -464,12 +478,12 @@ va_inside_add_actions = {
   _display_name = [typeOf _vehicle] call generic_display_name;
   
   //Add vehicle lock action
-  _action_id = player addaction [format["<img image='addons\vactions\icons\lock.paa'/> Lock %1", _display_name], {_this call va_lock_action;}, [_player, _vehicle],10,false,false,"",
+  _action_id = player addaction [format["<img image='addons\vactions\icons\lock.paa'/> Lock %1", _display_name], {_this call va_lock_action;}, [_player, _vehicle],0,false,false,"",
   format["([objectFromNetId %1, objectFromNetId %2] call va_lock_action_available)", str(netId _player), str(netId _vehicle)]];
   va_inside_actions = va_inside_actions + [_action_id];
   
   //Add vehicle unlock action
-  _action_id = player addaction [format["<img image='addons\vactions\icons\key.paa'/> Unlock %1", _display_name], {_this call va_unlock_action;}, [_player, _vehicle],10,false,false,"",
+  _action_id = player addaction [format["<img image='addons\vactions\icons\key.paa'/> Unlock %1", _display_name], {_this call va_unlock_action;}, [_player, _vehicle],0,false,false,"",
   format["([objectFromNetId %1, objectFromNetId %2] call va_unlock_action_available)", str(netId _player), str(netId _vehicle)]];
   va_inside_actions = va_inside_actions + [_action_id];
 };
@@ -496,18 +510,25 @@ va_outside_target = {
   ARGVX3(1,_distance,0);
   if (!isPlayer _player) exitWith {};
   
-  private["_pos1", "_pos2"];
-  _pos1 = (eyePos player);
-  _pos2 = ([_pos1, cameraDirDist(_distance)] call vector_add);
 
-  private["_objects"];
-  _objects = (lineIntersectsWith [_pos1,_pos2,objNull,objNull,true]);
-  if (!isARRAY(_objects) || {count _objects == 0}) exitWith {};
-  
   def(_target);
-  _target = _objects select 0;
+  if (surfaceIsWater (position _player)) then {
+   //line intersect does not work well when vehicle is in water
+    _target = cursorTarget;
+  }
+  else {
+    def(_pos1);
+    def(_pos2);
+    _pos1 = (eyePos player);
+    _pos2 = ([_pos1, cameraDirDist(_distance)] call vector_add);
+	_objects = (lineIntersectsWith [_pos1,_pos2,objNull,objNull,true]);
+	if (!isARRAY(_objects) || {count _objects == 0}) exitWith {};
+	_target = _objects select 0;
+  };
 
-  if (({_target isKindOf _x } count ["Helicopter", "Plane", "Ship_F", "Car", "Motorcycle", "Tank"]) == 0) exitWith {nil};
+  if (isNil "_target") exitWith {};
+
+  if (({_target isKindOf _x } count ["Helicopter", "Plane", "Ship_F", "Car", "Motorcycle", "Tank"]) == 0) exitWith {};
   
   _target
 };
