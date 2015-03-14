@@ -779,14 +779,17 @@ colorsArray = compileFinal str
 			["Confederate", _texDir + "confederate.jpg"],
 			["Union Jack", _texDir + "unionjack.jpg"],
 			["Yellow Camo", _texDir + "camo_fuel.jpg"],
-			["Orange Camo", _texDir + "camo_fack.jpg"],
-			["Red Camo", _texDir + "camo_deser.jpg"],
-			["Pink Camo", _texDir + "camo_pank.jpg"],
+			["Cow Carcass Camo", _texDir + "camo_deser.jpg"],
 			["Sexy Desert Camo", _texDir + "sexy-desert-camo.jpg"],
 			["Sexy Ninja Camo", _texDir + "sexy-ninja-camo.jpg"],
 			["Sexy Pink Camo", _texDir + "sexy-pink-camo.jpg"],
 			["Sexy Urban Camo", _texDir + "sexy-urban-camo.jpg"],
-			["Sexy Woodland Camo", _texDir + "sexy-woodland-camo-v2.jpg"]
+			["Sexy Woodland Camo", _texDir + "sexy-woodland-camo-v2.jpg"],
+			["Digital Desert Camo", _texDir + "512-Digital-Desert-Camo.jpg"],
+			["Digital Ninja Camo", _texDir + "512-Digital-Ninja-Camo.jpg"],
+			["Digital Pink Camo", _texDir + "512-Digital-Pink-Camo.jpg"],
+			["Digital Urban Camo", _texDir + "512-Digital-Urban-Camo.jpg"],
+			["Digital Woodland Camo", _texDir + "512-Digital-Woodland-Camo.jpg"]
 		]
 	],
 	[ // Kart colors
