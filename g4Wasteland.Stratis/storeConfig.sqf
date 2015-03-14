@@ -696,11 +696,11 @@ planesArray = compileFinal str
 	["A-143 Buzzard CAS", "I_Plane_Fighter_03_CAS_F", 86000, "vehicle"],
 	["A-164 Wipeout CAS", "B_Plane_CAS_01_F", 86000, "vehicle"],
 	["To-199 Neophron CAS", "O_Plane_CAS_02_F", 86000, "vehicle"],
-	["MQ4A Greyhawk ATGM UAV", "B_UAV_02_F", 175000, "vehicle"],
+	["MQ4A Greyhawk ATGM UAV", "B_UAV_02_F", 100000, "vehicle"],
 	["MQ4A Greyhawk Bomber UAV", "B_UAV_02_CAS_F", 65000, "vehicle"], // Bomber UAVs are a lot harder to use, hence why they are cheaper than ATGMs
-	["K40 Ababil-3 ATGM UAV (CSAT)", "O_UAV_02_F", 160000, "vehicle"],
+	["K40 Ababil-3 ATGM UAV (CSAT)", "O_UAV_02_F", 100000, "vehicle"],
 	["K40 Ababil-3 Bomber UAV (CSAT)", "O_UAV_02_CAS_F", 60000, "vehicle"],
-	["K40 Ababil-3 ATGM UAV (AAF)", "I_UAV_02_F", 160000, "vehicle"],
+	["K40 Ababil-3 ATGM UAV (AAF)", "I_UAV_02_F", 100000, "vehicle"],
 	["K40 Ababil-3 Bomber UAV (AAF)", "I_UAV_02_CAS_F", 60000, "vehicle"]
 ];
 
@@ -779,14 +779,17 @@ colorsArray = compileFinal str
 			["Confederate", _texDir + "confederate.jpg"],
 			["Union Jack", _texDir + "unionjack.jpg"],
 			["Yellow Camo", _texDir + "camo_fuel.jpg"],
-			["Orange Camo", _texDir + "camo_fack.jpg"],
-			["Red Camo", _texDir + "camo_deser.jpg"],
-			["Pink Camo", _texDir + "camo_pank.jpg"],
+			["Cow Carcass Camo", _texDir + "camo_deser.jpg"],
 			["Sexy Desert Camo", _texDir + "sexy-desert-camo.jpg"],
 			["Sexy Ninja Camo", _texDir + "sexy-ninja-camo.jpg"],
 			["Sexy Pink Camo", _texDir + "sexy-pink-camo.jpg"],
 			["Sexy Urban Camo", _texDir + "sexy-urban-camo.jpg"],
-			["Sexy Woodland Camo", _texDir + "sexy-woodland-camo-v2.jpg"]
+			["Sexy Woodland Camo", _texDir + "sexy-woodland-camo-v2.jpg"],
+			["Digital Desert Camo", _texDir + "512-Digital-Desert-Camo.jpg"],
+			["Digital Ninja Camo", _texDir + "512-Digital-Ninja-Camo.jpg"],
+			["Digital Pink Camo", _texDir + "512-Digital-Pink-Camo.jpg"],
+			["Digital Urban Camo", _texDir + "512-Digital-Urban-Camo.jpg"],
+			["Digital Woodland Camo", _texDir + "512-Digital-Woodland-Camo.jpg"]
 		]
 	],
 	[ // Kart colors
@@ -892,3 +895,4 @@ customPlayerItems = compileFinal str
 call compile preprocessFileLineNumbers "mapConfig\storeOwners.sqf";
 
 storeConfigDone = compileFinal "true";
+23.235.40.133
