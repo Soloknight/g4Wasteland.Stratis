@@ -55,7 +55,9 @@ unitHandleDamage = "client\functions\unitHandleDamage.sqf" call mf_compile;
 updateTerritoryMarkers = "territory\client\updateTerritoryMarkers.sqf" call mf_compile;
 vehicleSideCfg = "client\functions\vehicleSideCfg.sqf" call mf_compile;
 weaponDisassembledEvent = "client\functions\weaponDisassembledEvent.sqf" call mf_compile;
-rewardForPlaying = "client\functions\rewardforplaying.sqf" call mf_compile;
+
+// GoT additions
+fn_rewardLoyalty = "client\functions\fn_rewardLoyalty.sqf" call mf_compile;
 
 // Player details and actions
 loadPlayerMenu = "client\systems\playerMenu\init.sqf" call mf_compile;
