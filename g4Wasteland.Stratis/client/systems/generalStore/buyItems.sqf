@@ -369,7 +369,8 @@ storePurchaseHandle = _this spawn
 				if (uniform player != "" && {!(["uniform"] call _showReplaceConfirmMessage)}) exitWith {};
 
 				removeUniform player;
-				player addUniform _class;
+				//player addUniform _class;
+				player forceAddUniform _class;
 			};
 		} forEach (call uniformArray);
 	};
