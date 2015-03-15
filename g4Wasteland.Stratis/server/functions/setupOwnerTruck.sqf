@@ -30,4 +30,3 @@ _this spawn
 	[_this] call vehicleSetup;
 	_this enableSimulationGlobal false;
 };
-23.235.40.133
