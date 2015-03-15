@@ -19,6 +19,7 @@ else
 };
 
 _obj = createVehicle [_objClass, _objPos, [], 50, "None"];
+_obj setVariable ["R3F_LOG_disabled",false,true];
 
 switch (true) do
 {
