@@ -19,13 +19,12 @@ client_firstSpawn = true;
 	
 [] execVM "addons\credits\welcome.sqf";
 
-// This is for the reward for playing from GoT
-// if this is the first spawn start the timer
-if(format["%1",firstspawn] == format["%1","1"]) then {
-	[] spawn rewardForPlaying;
+// GoT addition - if this is the first spawn start the loyalty-timer
+if(format["%1",firstspawn] == format["%1","1"]) then 
+{
+	[] spawn fn_rewardLoyalty;
 	firstspawn = 0;
 };
-// REWARD End
 
 player addEventHandler ["Take",
 {
