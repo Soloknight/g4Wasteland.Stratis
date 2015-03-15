@@ -2028,7 +2028,7 @@ class Mission
 	};
 	class Vehicles
 	{
-		items=459;
+		items=461;
 		class Item0
 		{
 			position[]={4484.2783,113.72083,6777.0884};
@@ -7228,10 +7228,34 @@ class Mission
 			init="this call A3W_fnc_setupResupplyTruck";
 			description="Service";
 		};
+		class Item459
+		{
+			position[]={2631.4331,65.628738,635.09094};
+			azimut=-90.489998;
+			id=615;
+			side="EMPTY";
+			vehicle="B_Truck_01_box_F";
+			skill=0.60000002;
+			text="Owner_Truck";
+			init="this call A3W_fnc_setupOwnerTruck";
+			description="Change Owner";
+		};
+		class Item460
+		{
+			position[]={6061.7734,17.603216,5637.2939};
+			azimut=-241.78758;
+			id=616;
+			side="EMPTY";
+			vehicle="B_Truck_01_box_F";
+			skill=0.60000002;
+			text="Owner_Truck_1";
+			init="this call A3W_fnc_setupOwnerTruck";
+			description="Change Owner";
+		};
 	};
 	class Markers
 	{
-		items=169;
+		items=171;
 		class Item0
 		{
 			position[]={4339.3457,226.45149,3824.2236};
@@ -8554,6 +8578,24 @@ class Mission
 			a=20;
 			b=30;
 			angle=289.69101;
+		};
+		class Item169
+		{
+			position[]={2631.4019,65.630463,635.00183};
+			name="Owner_Truck";
+			text="Owner_Truck";
+			type="Empty";
+			colorName="ColorBlack";
+			angle=-131.94501;
+		};
+		class Item170
+		{
+			position[]={6061.8457,17.6015,5637.3555};
+			name="Owner_Truck_1";
+			text="Owner_Truck";
+			type="Empty";
+			colorName="ColorBlack";
+			angle=-283.24246;
 		};
 	};
 };
