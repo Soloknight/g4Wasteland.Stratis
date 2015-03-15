@@ -10,8 +10,8 @@ client_firstSpawn = true;
 
 [] execVM "client\functions\welcomeMessage.sqf";
 //set client side view distance on spawn
-//systemChat format["Optimizing Video Settings"];
-//setViewDistance 1000;
+systemChat format["Optimizing Shadow Settings"];
+setShadowDistance 0;
 //setObjectViewDistance 900;
 //setTerrainGrid 40;
 	
