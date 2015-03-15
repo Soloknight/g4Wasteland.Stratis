@@ -39,6 +39,6 @@ systemChat format["statusBar Loading player info...", _rscLayer];
 		case 0: {_minutes = "00"};
 	};
 		
-		((uiNamespace getVariable "osefStatusBar")displayCtrl 1000)ctrlSetText format["FPS: %1 | PLAYERS: %2 | RESTART IN: %3:%4 | Server C1 | Map:Stratis-G4W | TS:ts.g4-gamers.com | Website:G4-Gamers.com", round diag_fps, count playableUnits, _hours, _minutes, _counter];
+		((uiNamespace getVariable "osefStatusBar")displayCtrl 1000)ctrlSetText format["FPS: %1 | PLAYERS: %2 | RESTART IN: %3:%4 | Server C2 | Map:Stratis-G42 | TS:ts.g4-gamers.com | Website:G4-Gamers.com", round diag_fps, count playableUnits, _hours, _minutes, _counter];
 	}; 
 };
