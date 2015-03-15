@@ -4,10 +4,8 @@
 //	@file Name: fn_sellTruck.sqf
 //	@file Author: Gigatek, Wiking, Lodac
 
-
 #define SELL_TRUCK_DISTANCE 20
 #define SELLTRUCK_PRICE_RELATIONSHIP 2
-
 
 // Check if mutex lock is active.
 if (mutexScriptInProgress) exitWith
@@ -21,8 +19,8 @@ _truck = _this select 0;
 _unit = _this select 1;
 _vehicle = vehicle _unit;
 
-//check if caller is not in vehicle
-if (_vehicle == _unit) exitWith
+//check if caller is the driver
+if ((_unit != driver _vehicle) && !(_vehicle isKindOf "StaticWeapon") && !(_vehicle isKindOf "UAV_01_base_F") && !(_vehicle isKindOf "UAV_02_base_F") && !(_vehicle isKindOf "UGV_01_base_F")) exitWith
 {
 	["You must be in the driver seat to sell a vehicle.", 5] call mf_notify_client;
 	mutexScriptInProgress = false;
@@ -60,7 +58,7 @@ if (!local _vehicle) then
 
 if (_vehicle distance _truck > SELL_TRUCK_DISTANCE || vehicle _unit != _vehicle) then
 {
-	if (_started) then { ["Vehicle resupply aborted", 5] call mf_notify_client };
+	["Vehicle selling aborted", 5] call mf_notify_client;
 	mutexScriptInProgress = false;
 };
 
@@ -70,6 +68,17 @@ if (!isNil "_price") then
 	player setVariable["timesync",(player getVariable "timesync")+(_price * 3),true];
 	[] call fn_savePlayerData;
 	["Dismantling will take about 1 minute.", 10] call mf_notify_client;
+	
+	// get everyone out of the vehicle
+	_vehicleCrewArr = crew _vehicle;
+	{
+		_x action ["Eject", vehicle _x];
+	} foreach _vehicleCrewArr;
+	
+	_vehicle lock true;
+	_vehicle setVariable ["ownerUID", nil];
+	_vehicle setVariable ["A3W_missionVehicle", nil];
+	
 	_vehCfg = configFile >> "CfgVehicles" >> _vehClass;
 	_vehName = getText (_vehCfg >> "displayName");
 	_vehicle setFuel 0;
