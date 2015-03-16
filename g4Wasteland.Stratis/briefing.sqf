@@ -112,6 +112,22 @@ player createDiaryRecord ["features",
 
 player createDiaryRecord ["changelog",
 [
+"g4-gamers v1.5.2",
+"
+<br/>[Changed] Video Performance with no Shadows 
+<br/>[Changed] Changed Resupply cost to on hand money
+<br/>[Added] Added change ownership script and change ownership truck on the map
+<br/>[Added] Paint uniform system in general store
+<br/>[Added] New sexy skins and camo's
+<br/>[Added] New DLC content in stores (not available yet)
+<br/>[Added] Desk for Laptop mission
+<br/>[Changed] Name of Glitter Base to new name
+<br/>[Added] New Territory (Anuxa)
+<br/>[Changed] minor changes
+"
+]];
+player createDiaryRecord ["changelog",
+[
 "g4-gamers v1.5.1",
 "
 <br/>[Changed] Spawn beacon limit of 3 per player introduced
