@@ -107,6 +107,7 @@ forEach
 	"A3W_vehicleThermals",
 	"A3W_firstPersonCamOnFoot",
 	"A3W_firstPersonCamNotDriver",
+	"A3W_resupplyCostPR",
 	"A3W_atmEnabled",
 	"A3W_atmMaxBalance",
 	"A3W_atmTransferFee",
@@ -114,9 +115,12 @@ forEach
 	"A3W_atmEditorPlacedOnly",
 	"A3W_atmMapIcons",
 	"A3W_atmRemoveIfDisabled",
+	"A3W_extDB_PlayerSave_ServerID",
+	"A3W_extension",
 	"A3W_tkAutoKickEnabled",
 	"A3W_tkKickAmount",
-	"A3W_donatorEnabled"
+	"A3W_donatorEnabled",
+	"A3W_customUniformEnabled"
 ];
 
 ["A3W_join", "onPlayerConnected", { [_id, _uid, _name] spawn fn_onPlayerConnected }] call BIS_fnc_addStackedEventHandler;
