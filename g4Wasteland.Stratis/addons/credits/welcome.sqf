@@ -42,27 +42,19 @@ waitUntil {alive player};
 sleep 15; //Wait in seconds before the credits start after player IS ingame
 
 _role1 = "Welcome back to";
-_role1names = ["the G4 wasteland Stratis server 1 / v1.5"];
-_role2 = "Thanks to all the players";
-_role2names = ["For making this a awesome server!"];
-_role3 = "Our G4 TS3 server info is:";
+_role1names = ["G4G Wasteland Stratis!"];
+_role2 = "Visit our website at";
+_role2names = ["www.g4-gamers.com"];
+_role3 = "Join our Teampeak at";
 _role3names = ["ts.g4-gamers.com"];
-_role4 = "Check out the server stats at";
-_role4names = ["www.g4-gamers.com"];
-_role5 = "Need help?  Goto the map M key,";
-_role5names = ["there you can click on Server Features"];
-_role6 = "or";
-_role6names = ["See who are the G4 Admin's"];
-_role7 = "Always checkout the";
-_role7names = ["Server change log for server changes/updates!"];
-_role8 = "Did you know we have player loadouts?";
-_role8names = ["Check our website for player loadout 4 details"];
-_role9 = "Go to pimp your shit/Server perks at g4-gamers.com,";
-_role9names = ["Don't forget we also have a Stratis and an Altis server link to the Banks!"];
-_role10 = "Chernarus!!";
-_role10names = ["You got to checkout the Chernarus wasteland server on-line NOW!!"];
-_role11 = "Again,";
-_role11names = ["THANK YOU and HAVE FUN!!!"];
+_role4 = "Want to see your player stats";
+_role4names = ["go to www.g4-gamers.com"];
+_role5 = "Want to help maitain the server ?";
+_role5names = ["Donate on our website!"];
+_role6 = "Want custom gear loadouts ?";
+_role6names = ["Check our website!"];
+_role7 = "From all ARMA G4G team,";
+_role7names = ["thank you and have fun!"];
 
 {
 	sleep 2;
@@ -89,9 +81,6 @@ _role11names = ["THANK YOU and HAVE FUN!!!"];
 	[_role4, _role4names],
 	[_role5, _role5names],
 	[_role6, _role6names],
-	[_role7, _role7names],
-	[_role8, _role8names],
-	[_role9, _role9names],
-	[_role10, _role10names],
-	[_role11, _role11names] //make SURE the last one here does NOT have a , at the end
+	[_role7, _role7names]
+
 ];
