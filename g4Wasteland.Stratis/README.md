@@ -1,14 +1,20 @@
 *Wasteland.Stratis* by Team Wasteland!
 ===================
 
+Built on the A3Wasteland mission, and modified by g4-gamers.com
+
 ArmA 3 Wasteland is a harsh survival sandbox mission where 2 teams and independent players fight for survival.
 
+Notes about our fork:
+	* We do not use iniDB or profile persistence.  iniDB and persistence code has been removed.
+	* We extend persistence capabilities beyond the A3W release
 
-The mission is not ready yet, so for now it's just a placeholder :)
+*g4-gamers* collaborators:
 
-
-*Team Wasteland* collaborators:
-
+	Soloknight
+	Munch
+	
+A3W Original Collaborators:
        GoT - JoSchaap
        TPG - AgentRev
            - MercyfulFate
