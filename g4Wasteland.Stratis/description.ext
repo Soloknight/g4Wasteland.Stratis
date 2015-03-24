@@ -1,7 +1,7 @@
 respawn="BASE";
 respawnDelay=15;
 disabledAI=1;
-disableChannels[] = {0,2}; // {0} to disable global, {2} for command channel
+disableChannels[] = {2}; // {0} to disable global, {2} for command channel
 joinUnassigned = 0;
 enableItemsDropping = 0;
 forceRotorLibSimulation = 0; // if you set this to 1, you deny freedom of choice to the players, which is the very principle this mission is built upon
@@ -21,8 +21,8 @@ class Header
 	minPlayers=1;
 	maxPlayers=145; // 144 players, 1 headless client
 };
-author="G4.GAMERS.COM - Core by A3Wasteland.com";
-onLoadName = "|g4| A3Wasteland Stratis"; // it would be great if you could keep "A3" in the name, like "ABC A3Wasteland" instead of "ABC Wasteland" :)
+author="G4-GAMERS.COM - Core by A3Wasteland.com";
+onLoadName = "G4G A3Wasteland"; // it would be great if you could keep "A3" in the name, like "ABC A3Wasteland" instead of "ABC Wasteland" :)
 onLoadMission = "Website: g4-gamers.com Teamspeak: ts.g4-gamers.com CORE MISSION: a3wasteland.com";
 overviewText = "Website: g4-gamers.com Teamspeak: ts.g4-gamers.com";
 overviewTextLocked = "Website: g4-gamers.com Teamspeak: ts.g4-gamers.com";
@@ -86,7 +86,6 @@ class CfgNotifications
 	#include "client\CfgNotifications.hpp"
 };
 
-
 class CfgSounds
 {
 	sounds[] = 
@@ -140,6 +139,7 @@ class CfgSounds
                                 titles[] = {};
 			};
 };
+
 
 
 class CfgMusic
