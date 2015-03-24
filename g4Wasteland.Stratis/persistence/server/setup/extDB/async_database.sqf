@@ -30,7 +30,6 @@ _key = _key select 1;
 
 sleep 0.01;
 
-// Get Result via 4:x (single message return)  v19 and later
 _queryResult = "";
 _loop = true;
 while{_loop} do
@@ -62,9 +61,7 @@ _queryResult = call compile _queryResult;
 
 // Not needed, its SQF Code incase extDB ever returns error message i.e Database Died
 if ((_queryResult select 0) isEqualTo 0) exitWith {diag_log format ["extDB2: Protocol Error: %1, Unique ID: %2", _queryResult, _key]; []};
-
 // diag_log format["DEBUG %1: %2", _key, _queryresult];
-
 _return = (_queryResult select 1);
 
 if(!_multiarr) then {
