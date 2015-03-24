@@ -10,28 +10,12 @@ private ["_return", "_result", "_setupDir", "_serverID", "_env", "_mapID"];
 
 // uiNamespace is persistent across mission restarts (but not game restarts)
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
  _return = if (isNil {uiNamespace getVariable "A3W_extDB_databaseID"}) then
 {
 	diag_log "[extDB2] Startup...";
 
 	_result = call compile ("extDB2" callExtension format ["9:ADD_DATABASE:%1", call A3W_extDB_ConfigName]);
 	if (_result select 0 == 0) exitWith { diag_log format ["[extDB2] ### Database error! %1", _result]; false };
-
 
 	diag_log "[extDB2] Connected to database";
 
@@ -88,35 +72,22 @@ if (_return) then
 
 	_setupDir = "persistence\server\setup\extDB";
 
-
-
-
-
 	"extDB2" callExtension "9:LOCK";
 	diag_log "[extDB2] Locked";
 
-
 	extDB_pairsToSQL = [_setupDir, "fn_pairsToSQL.sqf"] call mf_compile;
 	extDB_Database_async = [_setupDir, "async_database.sqf"] call mf_compile;
-
-
-
 	if  (["A3W_extDB_rcon"] call isConfigOn) then
 	{
-
-
-
 		extDB_Rcon_async = [_setupDir, "async_rcon.sqf"] call mf_compile;
 	};
 	if  (["A3W_extDB_misc"] call isConfigOn) then
 	{
 		extDB_Misc_async = [_setupDir, "async_misc.sqf"] call mf_compile;
 	};
-
-
 	if  (["A3W_extDB_steam"] call isConfigOn) then
 	{
-		extDB_Misc_async = [_setupDir, "async_steam.sqf"] call mf_compile;
+		extDB_Steam_async = [_setupDir, "async_steam.sqf"] call mf_compile;
 	};
 
 	_result = (["getDBVersion", 2] call extDB_Database_async) select 0;
@@ -141,7 +112,6 @@ if (_return) then
 	};
 
 	_env = ["A3W_extDB2_Environment", "normal"] call getPublicVar;
-
 	_mapID = ([format ["getServerMapID:%1:%2", worldName, _env], 2] call extDB_Database_async) select 0;
 	if (_mapID == 0) then
 	{
@@ -155,7 +125,6 @@ if (_return) then
 			breakOut "extDB_envSetup";
 		};
 	};
-
 	A3W_extDB_MapID = compileFinal str _mapID;
 	
 	_return = true;
