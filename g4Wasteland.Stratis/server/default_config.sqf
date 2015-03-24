@@ -23,12 +23,16 @@ A3W_resupplyCostPR = 4;			   // Determine resupply cost by vehicle store cost / 
 A3W_firstPersonCamOnFoot = 0;	   // Lock infantry to first person view
 A3W_firstPersonCamNotDriver = 0;   // Lock all vehicle seating positions besides driver to first person view
 A3W_donatorEnabled = 1;				// Enable/Disable Donator Features
+A3W_customUniformEnabled = 1;		// Enable/Disable Custom Uniforms
+A3W_tkAutoKickEnabled = 1;			// Enable/Disable Autokick for teamkillers
+A3W_tkKickAmount = 10;			// TeamKill amount needed before Kick.
 
 // Store settings
 A3W_showGunStoreStatus = 1;        // Show enemy and friendly presence at gunstores on map (0 = no, 1 = yes)
 A3W_gunStoreIntruderWarning = 1;   // Warn players in gunstore areas of enemy intruders (0 = no, 1 = yes)
 A3W_remoteBombStoreRadius = 75;    // Prevent players from placing remote explosives within this distance from any store (0 = disabled)
 A3W_vehiclePurchaseCooldown = 60;  // Number of seconds to wait before allowing someone to purchase another vehicle, don't bother setting it too high because it can be bypassed by rejoining
+
 
 // Player settings
 A3W_startingMoney = 2500;           // Amount of money that players start with
@@ -73,8 +77,12 @@ A3W_extDB_ServerID = 1;            // Server ID to use in the database for the p
 A3W_extDB_Environment = "normal";  // Value used to separate player & object data from multiple environments running on the same map (e.g. "normal", "hardcore", "dev", etc. can be whatever you want)
 A3W_extDB_SaveUnlockedObjects = 1; // Save and restore unlocked baseparts that were locked at least once during their lifetime (0 = no, 1 = yes)
 A3W_extDB_ConfigName = "A3W";      // Name of the connection config from extdb-conf.ini to be used (the one within [brackets])
-A3W_extDB_IniName = "a3wasteland"; // Name of the INI file in extDB\db_custom to be used
-A3W_extDB_Debug = 0;               // Log all queries to server RPT (0 = no, 1 = yes)
+A3W_extDB_IniName = "a3wasteland"; // Name of the INI file in extDB\sql_custom to be used
+A3W_extDB_RconName = "RCON";       // Name of the rcon config from extdb-conf.ini to be used (the one within [brackets])
+A3W_extDB_Misc = 0;                // Enable extDB Misc Protocol (0 = no, 1 = yes)
+A3W_extDB_Rcon = 0;                // Enable extDB Rcon Protocol (0 = no, 1 = yes)
+A3W_extDB_rconCommands = "KICK-ADDBAN";	// List of RCON Commands Allowed via extDB_Rcon
+A3W_extDB_Steam = 0;               // Enable extDB Steam Protocol (0 = no, 1 = yes)
 A3W_territoryLogging = 1;			// Log territory capture events to database (0=no, 1=yes)
 
 // Spawning settings
@@ -86,7 +94,7 @@ A3W_heliSpawning = 1;              // If serverSpawning = 1, spawn helicopters i
 A3W_planeSpawning = 1;             // If serverSpawning = 1, spawn planes at some airfields (0 = no, 1 = yes)
 A3W_boxSpawning = 0;               // If serverSpawning = 1, spawn weapon crates in 50% towns (0 = no, 1 = yes)
 A3W_baseBuilding = 0;              // If serverSpawning = 1, spawn base parts in towns (0 = no, 1 = yes)
-A3W_essentialsSpawning = 1;			// If serverSpawning = 1, spawn essential items (food, water and ammo crates) in towns (0 = no, 1 = yes. If A3W_baseBuilding = 1, then essentialsSpawning = 1;)
+A3W_essentialsSpawning = 0;			// If serverSpawning = 1, spawn essential items (food, water and ammo crates) in towns (0 = no, 1 = yes. If A3W_baseBuilding = 1, then essentialsSpawning = 1;)
 
 
 // Loot settings
