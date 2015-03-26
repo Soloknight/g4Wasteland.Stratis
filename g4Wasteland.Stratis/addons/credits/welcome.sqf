@@ -42,7 +42,7 @@ waitUntil {alive player};
 sleep 15; //Wait in seconds before the credits start after player IS ingame
 
 _role1 = "Welcome back to";
-_role1names = ["G4G Wasteland Stratis!"];
+_role1names = ["G4G Wasteland!"];
 _role2 = "Visit our website at";
 _role2names = ["www.g4-gamers.com"];
 _role3 = "Join our Teampeak at";

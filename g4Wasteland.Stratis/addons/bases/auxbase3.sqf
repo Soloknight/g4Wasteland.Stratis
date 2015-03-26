@@ -394,7 +394,7 @@ _obj setVariable ["R3F_LOG_disabled", true, true];
 _obj = "Land_Cargo_Tower_V3_ruins_F" createvehicle [3517.107666,4935.656738,-0.11998];
 _obj setposATL [3517.107666,4935.656738,-0.11998];
 _obj setdir 301.595;
-_obj setVariable ["R3F_LOG_disabled", true, true];
+
 [_obj,0,0] call BIS_fnc_setPitchBank;
 _obj = "Land_Canal_WallSmall_10m_F" createvehicle [3484.967773,4906.396484,1.6066];
 _obj setposATL [3484.967773,4906.396484,1.6066];

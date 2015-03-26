@@ -23,7 +23,7 @@ class Header
 };
 author="G4-GAMERS.COM - Core by A3Wasteland.com";
 onLoadName = "G4G A3Wasteland"; // it would be great if you could keep "A3" in the name, like "ABC A3Wasteland" instead of "ABC Wasteland" :)
-onLoadMission = "Website: g4-gamers.com Teamspeak: ts.g4-gamers.com CORE MISSION: a3wasteland.com";
+onLoadMission = "Website: g4-gamers.com Teamspeak: ts.g4-gamers.com";
 overviewText = "Website: g4-gamers.com Teamspeak: ts.g4-gamers.com";
 overviewTextLocked = "Website: g4-gamers.com Teamspeak: ts.g4-gamers.com";
 overviewPicture = "mapConfig\Loading.jpg";
@@ -141,15 +141,4 @@ class CfgSounds
 };
 
 
-
-class CfgMusic
-{
- tracks[]={};
- 
- class introSong
-        {
-        name = "introSong";
-        sound[] = {"\music\introSong.ogg", db+0, 1.0};
-        };
-};
  
