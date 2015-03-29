@@ -32,7 +32,7 @@ loadScreen = "mapConfig\Loading.jpg";
 //Dialog includes
 
 #include "client\gui_base.hpp"
-#include "addons\R3F_ARTY_AND_LOG\desc_include.h"
+#include "addons\R3F_LOG\desc_include.h"
 #include "client\systems\ui_toolkit.hpp"
 #include "client\systems\common.hpp"
 #include "client\items\warchest\dialog.hpp"
@@ -56,6 +56,9 @@ loadScreen = "mapConfig\Loading.jpg";
 #include "addons\proving_ground\PG_config.hpp"
 #include "addons\gui\gui.hpp"
 //NON VANILLA ADDONS
+#include "addons\BoS\dialog\BoS_mainMenu.hpp"
+#include "addons\AF_Keypad\AF_KP_defines.hpp"
+#include "addons\AF_Keypad\AF_KP_dialogs.hpp"
 #include "addons\outlw_magRepack\MagRepack_Config.hpp"
 #include "addons\cctv\ui.hpp"
 #include "addons\cctv\laptop_flat_menu.hpp"

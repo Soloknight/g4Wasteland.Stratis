@@ -150,6 +150,9 @@ staticGunsArray = compileFinal str
 	["Mk6 Mortar (NATO)", "B_Mortar_01_F", 142500],
 	["Mk6 Mortar (CSAT)", "O_Mortar_01_F", 142500],
 	["Mk6 Mortar (AAF)", "I_Mortar_01_F", 142500]
+	//["Launcher Crate (NATO)", "Box_NATO_WpsLaunch_F", 55000],
+	//["Launcher Crate (CSAT)", "Box_East_WpsLaunch_F", 55000],
+	//["Launcher Crate (AAF)", "Box_IND_WpsLaunch_F", 55000]
 ];
 
 throwputArray = compileFinal str
@@ -637,8 +640,12 @@ allStoreGear = compileFinal str (call headArray + call uniformArray + call vestA
 genObjectsArray = compileFinal str
 [
 	["Empty Ammo Crate", "Box_NATO_Ammo_F", 200, "ammocrate"],
+	["Small Tan Case", "Land_PlasticCase_01_small_F", 200, "ammocrate"], //added by Esproc
+	["Camo Crate Cache", "Box_FIA_Support_F", 1000, "ammocrate"], //added as test by Esproc
 	//["Metal Barrel", "Land_MetalBarrel_F", 25, "object"],
 	//["Toilet Box", "Land_ToiletBox_F", 25, "object"],
+	//["Base Locker", "Land_Portable_generator_F", 100000, "object"],  //Cael817, SNAFU,Used for base operations <-- Non destroyable
+	["Base Locker", "Land_Device_assembled_F", 300000, "object"],  //Cael817, SNAFU,Used for base operations <-- Destroyable
 	["Lamp Post (Harbour)", "Land_LampHarbour_F", 100, "object"],
 	["Lamp Post (Shabby)", "Land_LampShabby_F", 100, "object"],
 	["Boom Gate", "Land_BarGate_F", 150, "object"],
@@ -671,12 +678,28 @@ genObjectsArray = compileFinal str
 	["Bag Bunker (Large)", "Land_BagBunker_Large_F", 500, "object"],
 	["Bag Bunker Tower", "Land_BagBunker_Tower_F", 1000, "object"],
 	["Military Cargo Post", "Land_Cargo_Patrol_V1_F", 800, "object"],
+	["Military Cargo HQ", "Land_Cargo_HQ_V1_F", 10000, "object"], //Noticed this was added to the R3F scripts as requested by players but was not placed in the store
 	["Military Cargo Tower", "Land_Cargo_Tower_V1_F", 10000, "object"],
 	["Concrete Ramp", "Land_RampConcrete_F", 350, "object"],
 	["Concrete Ramp (High)", "Land_RampConcreteHigh_F", 500, "object"],
 	//["Scaffolding", "Land_Scaffolding_F", 250, "object"]
 	["Land Pier (g4-gamers.com)", "Land_Pier_F", 250000, "object"],
-	["Fuel Station (g4-gamers.com)", "Land_FuelStation_Feed_F", 10000, "object"]
+	["Fuel Station (g4-gamers.com)", "Land_FuelStation_Feed_F", 10000, "object"],
+	//Extra items added 3/26/2015 by Esproc
+	//["Razorwire", "Land_Razorwire_F", 200, "object"]
+	//["Camo Net Green", "CamoNet_BLUFOR_Curator_F", 200, "object"],
+	//["Large Camo Net Green", "CamoNet_BLUFOR_big_Curator_F", 600, "object"],
+	//["Camo Net Brown", "CamoNet_OPFOR_Curator_F", 200, "object"],
+	//["Large Camo Net Brown", "CamoNet_OPFOR_big_Curator_F", 600, "object"],
+	["Concrete Platform", "BlockConcrete_F", 5000, "object"],
+	["Small Shack", "Land_Slum_House02_F", 1000, "object"],
+	["Metal Gate", "Land_City_Gate_F", 500, "object"],
+	["Small Shed", "Land_Shed_Small_F", 10000, "object"],
+	["Large Shed", "Land_Shed_Big_F", 40000, "object"],
+	["Cargo Container Green", "Land_Cargo20_military_green_F", 1000, "object"],
+	["Cargo Container Tan", "Land_Cargo20_sand_F", 1000, "object"],
+	["Double Spot Light", "Land_PortableLight_double_F", 100, "object"],
+	["Burning Barrel", "MetalBarrel_burning_F", 200, "object"]
 ];
 
 allGenStoreVanillaItems = compileFinal str (call genItemArray + call genObjectsArray + call allStoreGear);
@@ -997,11 +1020,14 @@ customPlayerItems = compileFinal str
 	["Jerry Can (Empty)", "jerrycanempty", localize "STR_WL_ShopDescriptions_fuelEmpty", "client\icons\jerrycan.paa", 50, 25],
 	["Spawn Beacon", "spawnbeacon", localize "STR_WL_ShopDescriptions_spawnBeacon", "client\icons\spawnbeacon.paa", 1500, 750],
 	["Camo Net", "camonet", localize "STR_WL_ShopDescriptions_Camo", "client\icons\camonet.paa", 200, 100],
+["Camo Net Big", "camonet_big", localize "STR_WL_ShopDescriptions_Camo", "client\icons\camonet.paa", 200, 100], //added by esproc
+	["Camo Net Small", "camonet_small", localize "STR_WL_ShopDescriptions_Camo", "client\icons\camonet.paa", 200, 100], //added by esproc
 	["Syphon Hose", "syphonhose", localize "STR_WL_ShopDescriptions_SyphonHose", "client\icons\syphonhose.paa", 200, 100],
 	["Energy Drink", "energydrink", localize "STR_WL_ShopDescriptions_Energy_Drink", "client\icons\energydrink.paa", 100, 50],
 	["Warchest", "warchest", localize "STR_WL_ShopDescriptions_Warchest", "client\icons\warchest.paa", 1000, 500],
 	["Boomerang Terminal", "boomerang_terminal", localize "STR_WL_ShopDescriptions_Boomerang_Terminal", "addons\boomerang\icons\terminal.paa", 850, 500],
-	["Boomerang Station", "boomerang_station", localize "STR_WL_ShopDescriptions_Boomerang_Station", "addons\boomerang\icons\antenna.paa", 850, 500]
+	["Boomerang Station", "boomerang_station", localize "STR_WL_ShopDescriptions_Boomerang_Station", "addons\boomerang\icons\antenna.paa", 850, 500],
+	["Razor-wire", "razorwire", localize "STR_WL_ShopDescriptions_Razor", "client\icons\briefcase.paa", 200, 100] //added by esproc
 ];
 
 call compile preprocessFileLineNumbers "mapConfig\storeOwners.sqf";

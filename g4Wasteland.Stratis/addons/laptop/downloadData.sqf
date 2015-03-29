@@ -127,6 +127,7 @@ T8_fnc_ActionLaptop =
 			if ( _bmoney > 0 ) then { //might as well check for zero's
 			_fivePercent = round(0.005*_bmoney);
 			_x setVariable [ "bmoney", (_bmoney - _fivePercent), true ];
+			[] spawn fn_savePlayerData;
 			_totalMoney = _totalMoney + _fivePercent;
 		}
 			}
@@ -144,6 +145,7 @@ T8_fnc_ActionLaptop =
 			if ( _bmoney > 0 ) then { //might as well check for zero's
 			_fivePercent = round(0.005*_bmoney);
 			_x setVariable [ "bmoney", (_bmoney - _fivePercent), true ];
+			[] spawn fn_savePlayerData;
 			_totalMoney = _totalMoney + _fivePercent;
 		}
 			}
@@ -158,6 +160,7 @@ T8_fnc_ActionLaptop =
 			if ( _bmoney > 0 ) then { //might as well check for zero's
 			_fivePercent = round(0.005*_bmoney);
 			_x setVariable [ "bmoney", (_bmoney - _fivePercent), true ];
+			[] spawn fn_savePlayerData;
 			_totalMoney = _totalMoney + _fivePercent;
 		}
 			}
@@ -168,14 +171,16 @@ T8_fnc_ActionLaptop =
 			
 			if (_totalMoney > 25000) then {
 			player setVariable ["cmoney", (player getVariable ["cmoney", 0]) + _totalMoney, true];
+			[] spawn fn_savePlayerData;
 			systemChat format["You have hacked players bank accounts to the value of $%1",_totalMoney];	
 			}
 		else 	{
-				player setVariable ["cmoney", (player getVariable ["cmoney", 0]) + 25000, true];
-				systemChat format["You have hacked players bank accounts to the value of $25,000"];				
+			player setVariable ["cmoney", (player getVariable ["cmoney", 0]) + 25000, true];
+			[] spawn fn_savePlayerData;
+			systemChat format["You have hacked players bank accounts to the value of $25,000"];				
 				};
 			};
-			
+					
 			ctrlSetText [ 8002, format [ "%1 kb/s", _dlRate ] ];		
 			ctrlSetText [ 8004, format [ "%1 kb", _newFile ] ];				
 			

@@ -71,7 +71,7 @@ if (isServer) then
 };
 
 //init 3rd Party Scripts
-[] execVM "addons\R3F_ARTY_AND_LOG\init.sqf";
+[] execVM "addons\R3F_LOG\init.sqf";
 [] execVM "addons\proving_ground\init.sqf";
 [] execVM "addons\scripts\DynamicWeatherEffects.sqf";
 [] execVM "addons\JumpMF\init.sqf";
@@ -80,6 +80,7 @@ if (isServer) then
 [] execVM "addons\vactions\functions.sqf";				
 [] execVM "addons\Explosives-To-Vehicle\init.sqf"; // addon for explosives to vehicles
 [] execVM "addons\outlw_magRepack\MagRepack_init_sv.sqf";
+[] execVM "addons\AF_Keypad\AF_KP_vars.sqf";
 [] execVM "addons\zlt_fastrope\zlt_fastrope.sqf";
 [] execVM "addons\statusBar\fn_statusBar.sqf";
 

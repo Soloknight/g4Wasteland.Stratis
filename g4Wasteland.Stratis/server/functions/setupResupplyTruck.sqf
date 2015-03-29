@@ -11,7 +11,7 @@ if (!isServer) exitWith {};
 _this lock 2;
 _this allowDamage false;
 _this setVariable ["R3F_LOG_disabled", true, true];
-_this setVariable ["A3W_resupplyTruck", true, true];
+_this setVariable ["A3W_Truck", true, true];
 _this setVariable ["ownerName", "Resupply", true];
 _this setAmmoCargo 0;
 _this setFuelCargo 0;

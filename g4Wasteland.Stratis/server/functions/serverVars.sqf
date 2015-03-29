@@ -207,7 +207,10 @@ vehicleAddition =
 	"Medikit",
 	"Medikit",
 	"FirstAidKit",
-	"ToolKit"
+	"ToolKit",
+	"H_HelmetIA",
+	"V_HarnessO_brn",
+	"MiniGrenade"
 ];
 
 vehicleAddition2 =
