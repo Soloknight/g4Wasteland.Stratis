@@ -10,7 +10,7 @@ if(R3F_LOG_mutex_local_verrou) exitWith {
 	player globalChat STR_R3F_LOG_mutex_action_en_cours;
 };
 
-private["_locking", "_object", "_lockState", "_lockDuration", "_stringEscapePercent", "_iteration", "_unlockDuration", "_totalDuration", "_checks", "_success","_IsProtected","_IsAllowed"];
+private["_locking", "_object", "_lockState", "_lockDuration", "_stringEscapePercent", "_iteration", "_unlockDuration", "_totalDuration", "_checks", "_success", "_isProtected", "_isAllowed"];
 
 _object = _this select 0;
 _lockState = _this select 3;
@@ -177,7 +177,7 @@ switch (_lockState) do
 		if (_success) then
 		{
 			_object setVariable ["objectLocked", false, true];
-			_object setVariable ["ownerUID", nil, true];
+			//_object setVariable ["ownerUID", nil, true];
 			_object setVariable ["baseSaving_hoursAlive", nil, true];
 			_object setVariable ["baseSaving_spawningTime", nil, true];
 

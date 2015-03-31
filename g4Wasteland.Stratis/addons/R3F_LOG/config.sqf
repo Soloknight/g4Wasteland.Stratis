@@ -347,6 +347,8 @@ R3F_LOG_CFG_can_transport_cargo = R3F_LOG_CFG_can_transport_cargo +
 	["Truck_F", 75],
 	["Wheeled_APC_F", 30],
 	["Tank_F", 30],
+	["O_MRAP_02_base_F", 10],
+	["I_MRAP_03_base_F", 10],
 	["Rubber_duck_base_F", 10],
 	["Boat_Civil_01_base_F", 10],
 	["Boat_Armed_01_base_F", 20],

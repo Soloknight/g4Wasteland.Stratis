@@ -10,39 +10,37 @@ MainMissions =
 [
 	// Mission filename, weight
 	["mission_ArmedDiversquad", 1],
-	["mission_Coastal_Convoy", 1],
+	["mission_Coastal_Convoy", 0.25],
 	["mission_Convoy", 1],
-	["mission_HostileHeliFormation", 0.5],
+	["mission_HostileHeliFormation", 0.75],
 	["mission_APC", 1],
 	["mission_MBT", 1],
 	["mission_LightArmVeh", 1],
 	["mission_ArmedHeli", 1],
-	["mission_CivHeli", 1]
+	["mission_CivHeli", 1],
+	["mission_Hackers", 0.5]
 ];
 
 SideMissions =
 [
-	["mission_HostileHelicopter", 0.5],
+	["mission_HostileHelicopter", 0.75],
 	["mission_MiniConvoy", 1],
 	["mission_SunkenSupplies", 1],
-	["mission_TownInvasion", 2],
-	//["mission_AirWreck", 1.5],
-	//["mission_WepCache", 1.5],
-	["mission_Outpost", 2],
-	["mission_Truck", 1]
+	["mission_TownInvasion", 1],
+	//["mission_AirWreck", 1],
+	//["mission_WepCache", 1],
+	["mission_Outpost", 1],
+	["mission_Truck", 1],
+	["mission_Roadblock", 1],
+	["mission_Sniper", 1],
+	["mission_Smugglers", 1]
 ];
 
 MoneyMissions =
 [
 	["mission_MoneyShipment", 1],
 	["mission_SunkenTreasure", 1]
-];
-
-ExtraMissions =
-[
-	["mission_Sniper", 1],
-	["mission_Smugglers", 1],
-	["mission_HackLaptop", 0.3]
+	// ["mission_militaryPatrol", 1]
 ];
 
 
@@ -53,10 +51,11 @@ MoneyMissions = [MoneyMissions, [["A3W_underWaterMissions", ["mission_SunkenTrea
 { _x set [2, false] } forEach MainMissions;
 { _x set [2, false] } forEach SideMissions;
 { _x set [2, false] } forEach MoneyMissions;
-{ _x set [2, false] } forEach ExtraMissions;
 
 MissionSpawnMarkers = [];
 SunkenMissionMarkers = [];
+RoadblockMissionMarkers =[];
+SniperMissionMarkers =[];
 {
 	switch (true) do
 	{
@@ -67,6 +66,14 @@ SunkenMissionMarkers = [];
 		case (["SunkenMission_", _x] call fn_startsWith):
 		{
 			SunkenMissionMarkers pushBack [_x, false];
+		};
+		case (["RoadBlock_", _x] call fn_startsWith):
+		{
+			RoadblockMissionMarkers pushBack [_x, false];
+		};
+		case (["Sniper_", _x] call fn_startsWith):
+		{
+			SniperMissionMarkers pushBack [_x, false];
 		};
 	};
 } forEach allMapMarkers;

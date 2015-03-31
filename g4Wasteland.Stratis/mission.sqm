@@ -7255,7 +7255,7 @@ class Mission
 	};
 	class Markers
 	{
-		items=171;
+		items=190;
 		class Item0
 		{
 			position[]={4339.3457,226.45149,3824.2236};
@@ -8596,6 +8596,156 @@ class Mission
 			type="Empty";
 			colorName="ColorBlack";
 			angle=-283.24246;
+		};
+		class Item171
+		{
+			position[]={3516.6252,91.63047,5333.4849};
+			name="RoadBlock_1";
+			type="Empty";
+			colorName="ColorUNKNOWN";
+			angle=-240.56799;
+		};
+		class Item172
+		{
+			position[]={4000.4775,143.48155,7030.3052};
+			name="Sniper_1";
+			type="Empty";
+			colorName="ColorCIV";
+		};
+		class Item173
+		{
+			position[]={4808.1196,136.40088,6430.314};
+			name="RoadBlock_2";
+			type="Empty";
+			colorName="ColorUNKNOWN";
+			angle=-158.883;
+		};
+		class Item174
+		{
+			position[]={5492.7583,122.77452,5500.5684};
+			name="RoadBlock_3";
+			type="Empty";
+			colorName="ColorUNKNOWN";
+			angle=-203.508;
+		};
+		class Item175
+		{
+			position[]={4519.9663,188.91554,4317.0776};
+			name="RoadBlock_4";
+			type="Empty";
+			colorName="ColorUNKNOWN";
+			angle=-103.337;
+		};
+		class Item176
+		{
+			position[]={2823.6816,51.040543,3830.3823};
+			name="RoadBlock_5";
+			type="Empty";
+			colorName="ColorUNKNOWN";
+			angle=-88.171402;
+		};
+		class Item177
+		{
+			position[]={3422.8701,149.13599,2685.2764};
+			name="RoadBlock_6";
+			type="Empty";
+			colorName="ColorUNKNOWN";
+			angle=-240.56799;
+		};
+		class Item178
+		{
+			position[]={2841.6084,155.1368,1856.6743};
+			name="RoadBlock_7";
+			type="Empty";
+			colorName="ColorUNKNOWN";
+			angle=-137.396;
+		};
+		class Item179
+		{
+			position[]={4034.4507,140.50977,7018.5396};
+			name="Sniper_1_1";
+			type="Empty";
+			colorName="ColorCIV";
+		};
+		class Item180
+		{
+			position[]={4434.1997,172.68529,6561.2817};
+			name="Sniper_2";
+			type="Empty";
+			colorName="ColorCIV";
+			angle=-230.778;
+		};
+		class Item181
+		{
+			position[]={3741.3867,212.84366,4888.3428};
+			name="Sniper_3";
+			type="Empty";
+			colorName="ColorCIV";
+			angle=-181.532;
+		};
+		class Item182
+		{
+			position[]={4082.1365,219.34453,4618.0977};
+			name="Sniper_11";
+			type="Empty";
+			colorName="ColorCIV";
+			angle=-238.242;
+		};
+		class Item183
+		{
+			position[]={4896.2954,203.44568,4403.1514};
+			name="Sniper_4";
+			type="Empty";
+			colorName="ColorCIV";
+			angle=-181.532;
+		};
+		class Item184
+		{
+			position[]={2603.8435,106.10011,4235.3052};
+			name="Sniper_5";
+			type="Empty";
+			colorName="ColorCIV";
+			angle=-181.532;
+		};
+		class Item185
+		{
+			position[]={2668.8652,146.71823,3363.1621};
+			name="Sniper_6";
+			type="Empty";
+			colorName="ColorCIV";
+			angle=-181.532;
+		};
+		class Item186
+		{
+			position[]={2451.1826,136.91011,2454.2666};
+			name="Sniper_7";
+			type="Empty";
+			colorName="ColorCIV";
+			angle=-362.83099;
+		};
+		class Item187
+		{
+			position[]={3234.2739,163.52026,2262.0273};
+			name="Sniper_8";
+			type="Empty";
+			colorName="ColorCIV";
+			angle=-181.532;
+		};
+		class Item188
+		{
+			position[]={2665.1199,142.71652,1623.7529};
+			name="Sniper_9";
+			type="Empty";
+			colorName="ColorCIV";
+			angle=-132.209;
+		};
+		class Item189
+		{
+			position[]={2745.0212,73.068459,1010.0078};
+			name="Sniper_10";
+			type="Empty";
+			colorName="ColorCIV";
+			angle=-181.532;
 		};
 	};
 };

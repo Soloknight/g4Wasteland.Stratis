@@ -553,10 +553,10 @@ _obj setposATL [5109.0698242,4317.0600586,-1.02455];
 _obj setdir 288.186;
 _obj setVariable ["R3F_LOG_disabled", true, true]; //so you cant steal it =)
 [_obj,0,0] call BIS_fnc_setPitchBank;
-_obj = "Flag_White_F" createvehicle [5091.0898438,4342.290039,4.96854];
+_obj = "FlagPole_F" createvehicle [5091.0898438,4342.290039,4.96854];
 _obj setposATL [5091.0898438,4342.290039,4.96854];
 _obj setdir 360;
-_obj setFlagTexture "client\images\promoteTextures\G4flag.paa";
+_obj setFlagTexture "client\images\promoteTextures\G4flag.jpg";
 _obj setVariable ["R3F_LOG_disabled", true, true]; //so you cant steal it =)
 [_obj,0,0] call BIS_fnc_setPitchBank;
 _obj = "Land_HBarrierBig_F" createvehicle [5071.509766,4373.910156,-0.575363];

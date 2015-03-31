@@ -1020,14 +1020,12 @@ customPlayerItems = compileFinal str
 	["Jerry Can (Empty)", "jerrycanempty", localize "STR_WL_ShopDescriptions_fuelEmpty", "client\icons\jerrycan.paa", 50, 25],
 	["Spawn Beacon", "spawnbeacon", localize "STR_WL_ShopDescriptions_spawnBeacon", "client\icons\spawnbeacon.paa", 1500, 750],
 	["Camo Net", "camonet", localize "STR_WL_ShopDescriptions_Camo", "client\icons\camonet.paa", 200, 100],
-["Camo Net Big", "camonet_big", localize "STR_WL_ShopDescriptions_Camo", "client\icons\camonet.paa", 200, 100], //added by esproc
-	["Camo Net Small", "camonet_small", localize "STR_WL_ShopDescriptions_Camo", "client\icons\camonet.paa", 200, 100], //added by esproc
 	["Syphon Hose", "syphonhose", localize "STR_WL_ShopDescriptions_SyphonHose", "client\icons\syphonhose.paa", 200, 100],
 	["Energy Drink", "energydrink", localize "STR_WL_ShopDescriptions_Energy_Drink", "client\icons\energydrink.paa", 100, 50],
 	["Warchest", "warchest", localize "STR_WL_ShopDescriptions_Warchest", "client\icons\warchest.paa", 1000, 500],
 	["Boomerang Terminal", "boomerang_terminal", localize "STR_WL_ShopDescriptions_Boomerang_Terminal", "addons\boomerang\icons\terminal.paa", 850, 500],
-	["Boomerang Station", "boomerang_station", localize "STR_WL_ShopDescriptions_Boomerang_Station", "addons\boomerang\icons\antenna.paa", 850, 500],
-	["Razor-wire", "razorwire", localize "STR_WL_ShopDescriptions_Razor", "client\icons\briefcase.paa", 200, 100] //added by esproc
+	["Boomerang Station", "boomerang_station", localize "STR_WL_ShopDescriptions_Boomerang_Station", "addons\boomerang\icons\antenna.paa", 850, 500]
+	
 ];
 
 call compile preprocessFileLineNumbers "mapConfig\storeOwners.sqf";
