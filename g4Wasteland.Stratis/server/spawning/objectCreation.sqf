@@ -9,15 +9,7 @@ if (!isServer) exitWith {};
 private ["_objPos", "_objClass", "_obj", "_adjustZ", "_pos"];
 _objPos = _this select 0;
 
-if (["A3W_essentialsSpawning"] call isConfigOn && !(["A3W_baseBuilding"] call isConfigOn)) then
-{
-	_objClass = essentialsList call BIS_fnc_selectRandom;
-}
-else
-{
-	_objClass = objectList call BIS_fnc_selectRandom;
-};
-
+_objClass = objectList call BIS_fnc_selectRandom;
 _obj = createVehicle [_objClass, _objPos, [], 50, "None"];
 _obj setVariable ["R3F_LOG_disabled",false,true];
 

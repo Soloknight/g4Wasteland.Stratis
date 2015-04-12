@@ -56,7 +56,7 @@ if (hasInterface) then
 
 if (isServer) then
 {
-	_building = nearestBuilding _npc;
+	_building = (_npc modelToWorld [0,0,0]) nearestObject "House"; // nearestBuilding _npc; has been acting weird since A3 v1.42
 	_npc setVariable ["storeNPC_nearestBuilding", netId _building, true];
 
 	_facesCfg = configFile >> "CfgFaces" >> "Man_A3";
@@ -96,7 +96,7 @@ else
 
 if (isNil "_building" || {isNull _building}) then
 {
-	_building = nearestBuilding _npc;
+	_building = (_npc modelToWorld [0,0,0]) nearestObject "House"; // nearestBuilding _npc;
 };
 
 _building allowDamage true;
@@ -156,8 +156,7 @@ if (isServer) then
 						if (_classname != "") then
 						{
 							diag_log format ["Applying %1 as uniform for %2", _classname, _npcName];
-							//_npc addUniform _classname;
-							_npc forceAddUniform _classname;
+							_npc addUniform _classname;
 						};
 					};
 					case "switchMove":

@@ -46,8 +46,6 @@ _message = format ["<t shadow=""1"">%1<br/>%2<br/>%3<br/></t>",
 	]
 ];
 
-//playMusic "introSong"; // Play introSong defined in description.ext cfgSounds //Lowered size of file
-
 _control ctrlSetStructuredText (parseText _message);
 
 

@@ -75,14 +75,6 @@ waterVehicles =
 	"C_Boat_Civil_01_rescue_F"
 ];
 
-//Essential List - Random Spawns.
-essentialsList =
-[
-	"B_supplyCrate_F",
-	"Land_Sacks_goods_F",
-	"Land_BarrelWater_F"
-];
-
 //Object List - Random Spawns.
 objectList =
 [

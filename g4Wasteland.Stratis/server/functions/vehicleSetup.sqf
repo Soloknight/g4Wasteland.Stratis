@@ -13,19 +13,6 @@ _vehicle = _this select 0;
 _class = typeOf _vehicle;
 
 _vehicle setVariable [call vChecksum, true];
-// Tops
-if (vehicleThermalsOn) then
-{
-	_vehicle disableTIEquipment false;
-}
-else
-{
-	if !(_vehicle isKindOf "UAV_02_base_F") then
-	{
-		_vehicle disableTIEquipment true;
-	};
-};
-// Tops end
 
 clearMagazineCargoGlobal _vehicle;
 clearWeaponCargoGlobal _vehicle;
@@ -36,10 +23,10 @@ if !(_class isKindOf "AllVehicles") exitWith {}; // if not actual vehicle, finis
 clearBackpackCargoGlobal _vehicle;
 
 // Disable thermal on all manned vehicles
-//if (getNumber (configFile >> "CfgVehicles" >> _class >> "isUav") < 1) then
-//{
-//	_vehicle disableTIEquipment true;
-//};
+if (getNumber (configFile >> "CfgVehicles" >> _class >> "isUav") < 1) then
+{
+	_vehicle disableTIEquipment true;
+};
 
 _vehicle setUnloadInCombat [true, false]; // Prevent AI gunners from getting out of vehicle while in combat if it's in working condition
 
