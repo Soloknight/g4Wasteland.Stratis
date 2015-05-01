@@ -41,12 +41,13 @@ if (!isDedicated) then
 			9999 cutText ["Welcome to A3Wasteland, please wait for your client to initialize", "BLACK", 0.01];
 
 			waitUntil {!isNull player};
+			player setVariable ["playerSpawning", true, true];
+
 			removeAllWeapons player;
 			client_initEH = player addEventHandler ["Respawn", { removeAllWeapons (_this select 0) }];
 
 			// Reset group & side
 			[player] joinSilent createGroup playerSide;
-			player setVariable ["playerSpawning", true, true];
 
 			execVM "client\init.sqf";
 		}
@@ -73,14 +74,25 @@ if (isServer) then
 //init 3rd Party Scripts
 [] execVM "addons\R3F_LOG\init.sqf";
 [] execVM "addons\proving_ground\init.sqf";
-[] execVM "addons\scripts\DynamicWeatherEffects.sqf";
+//[] execVM "addons\scripts\DynamicWeatherEffects.sqf";
 [] execVM "addons\JumpMF\init.sqf";
 //init non vanilla addons
 [] execVM "addons\laptop\init.sqf";						// Addon for hack laptop mission
 [] execVM "addons\vactions\functions.sqf";				
 [] execVM "addons\Explosives-To-Vehicle\init.sqf"; // addon for explosives to vehicles
 [] execVM "addons\outlw_magRepack\MagRepack_init_sv.sqf";
+[] execVM "addons\safezone\safezone.sqf"; //safezones
 [] execVM "addons\AF_Keypad\AF_KP_vars.sqf";
 [] execVM "addons\zlt_fastrope\zlt_fastrope.sqf";
-[] execVM "addons\statusBar\fn_statusBar.sqf";
+//[] execVM "addons\statusBar\fn_statusBar.sqf";
+[] execVM "addons\HvT\HvT.sqf"; // High Value Target
+[] execVM "addons\scripts\toxic_gas.sqf"; // teargass bitches !
+if(hasInterface) then{[] execVM "addons\statusBar\statusbar.sqf"};
 
+while {true} do
+{
+	0 setOvercast 0;
+	0 setRain 0;
+	0 setFog 0;
+	enableEnvironment false;
+};

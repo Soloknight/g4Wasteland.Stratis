@@ -4,7 +4,7 @@
 //	@file Name: setupSellTruck.sqf
 //	@file Author: AgentRev, Lodac 
 
-_this addAction ["<img image='client\icons\store.paa'/> Sell Vehicle", "client\functions\fn_sellTruck.sqf", [], 51, true, true, "", "vehicle _this != _this && _this distance _target <= 20"];
+_this addAction ["<img image='client\icons\store.paa'/> Sell Vehicle", "client\functions\fn_sellTruck.sqf", [], 51, true, true, "", "vehicle _this != _this && _this distance _target <= 30"];
 
 if (!isServer) exitWith {};
 

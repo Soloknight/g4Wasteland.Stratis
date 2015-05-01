@@ -230,7 +230,7 @@ FAR_public_EH =
 			}
 			else
 			{
-				systemChat format ["%1 was wounded by %2", toString _unitName, toString _killerName];
+				systemChat format ["%1 was Wreked by %2", toString _unitName, toString _killerName];
 			};
 		};
 	};

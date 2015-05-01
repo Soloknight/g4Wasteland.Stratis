@@ -13,7 +13,6 @@
 #define hud_vehicle_idc 3601
 #define hud_activity_icon_idc 3602
 #define hud_activity_textbox_idc 3603
-#define hud_server_idc 3604
 
 class WastelandHud {
 	idd = -1;
@@ -96,6 +95,5 @@ class WastelandHud {
 				valign = "middle";
 			};
 		};
-
 	};
 };

@@ -174,6 +174,10 @@ vehicleWeapons =
 	"arifle_MX_SW_F",
 	"arifle_MXM_F",
 	"srifle_EBR_F",
+	"srifle_DMR_02_ACO_F",
+	"srifle_DMR_03_ACO_F",
+	"srifle_DMR_05_MRCO_F",
+	"srifle_DMR_06_camo_khs_F",
 	"LMG_Mk200_F",
 	"LMG_Zafir_F"
 ];
@@ -196,13 +200,22 @@ vehicleAddition =
 	"optic_Holosight_smg",
 	"acc_flashlight",
 	"acc_pointer_IR",
+	"bipod_03_F_blk",
 	"Medikit",
 	"Medikit",
 	"FirstAidKit",
 	"ToolKit",
+	"G_Bandanna_oli",
+	"G_Balaclava_oli",
+	"H_MilCap_dgtl",
 	"H_HelmetIA",
+	"H_HelmetB",
+	"V_Press_F",
 	"V_HarnessO_brn",
-	"MiniGrenade"
+	"V_TacVest_brn",
+	"MiniGrenade",
+	"IEDUrbanSmall_Remote_Mag",
+	"IEDLandSmall_Remote_Mag"
 ];
 
 vehicleAddition2 =

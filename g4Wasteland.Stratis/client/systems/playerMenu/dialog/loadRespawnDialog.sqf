@@ -14,6 +14,7 @@
 #define SPAWN_BEACON_COOLDOWN (["A3W_spawnBeaconCooldown", 5*60] call getPublicVar)
 #define BEACON_CHECK_RADIUS 250
 #define UNCONSCIOUS(UNIT) (UNIT getVariable ["FAR_isUnconscious", 0] == 1)
+
 disableSerialization;
 waitUntil {!isNil "bis_fnc_init" && {bis_fnc_init}};
 

@@ -27,7 +27,7 @@ class playerSettings {
 			idc = -1;
 			colorText[] = {1, 1, 1, 1};
 			colorBackground[] = {0,0,0,0};
-			text = "#(argb,8,8,3)color(0.25,0.51,0.96,0.8)";
+			text = "#(argb,8,8,3)color(0.45,0.005,0,1)";
 
 			x = 0;
 			y = 0.1;
@@ -37,7 +37,7 @@ class playerSettings {
 
 		class MainTitle : w_RscText {
 			idc = -1;
-			text = "Player Inventory";
+			text = "Player Menu";
 			sizeEx = 0.04;
 			shadow = 2;
 			x = 0.260; y = 0.1;
@@ -63,6 +63,13 @@ class playerSettings {
 			text = "client\icons\money.paa";
 			x = 0.022; y = 0.32;
 			w = 0.04 / (4/3); h = 0.04;
+		};
+		
+		class serverLogo : w_RscPicture {
+			idc = -1;
+			text = "mapconfig\logo.paa";
+			x = 0.225; y = 0.20;
+			w = 0.32 / (4/3); h = 0.32;
 		};
 
 		class waterText : w_RscText {

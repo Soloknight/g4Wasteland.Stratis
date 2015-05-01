@@ -28,6 +28,7 @@ overviewText = "Website: g4-gamers.com Teamspeak: ts.g4-gamers.com";
 overviewTextLocked = "Website: g4-gamers.com Teamspeak: ts.g4-gamers.com";
 overviewPicture = "mapConfig\Loading.jpg";
 loadScreen = "mapConfig\Loading.jpg";
+pictureMap = "mapConfig\Loading.jpg";
 
 //Dialog includes
 
@@ -80,6 +81,7 @@ class CfgFunctions
 {
 	class A3W
 	{
+		#include "client\CfgFunctions.hpp"
 		#include "server\CfgFunctions.hpp"
 	};
 };

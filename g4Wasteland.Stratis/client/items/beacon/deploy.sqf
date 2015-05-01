@@ -11,9 +11,22 @@
 #define ANIM "AinvPknlMstpSlayWrflDnon_medic"
 #define ERR_CANCELLED "Action Cancelled"
 #define ERR_IN_VEHICLE "Action Failed! You can't do this in a vehicle"
-#define MAX_SPAWN_BEACONS 3
+#define ERR_DONATOR "Action Failed! You are not allowed to place a beacon near this base"
+#define MAX_BEACONS format ["You cannot deploy more then %1 spawnbeacons", [_MaxSpawnbeacons]]
+_MaxSpawnbeacons = ceil (["A3W_maxSpawnBeacons", 5] call getPublicVar);
 
-private ["_hasFailed", "_success","_pos","_uid","_beacon"];
+private ["_hasFailed", "_success","_pos","_uid","_beacon","_IsProtected","_IsAllowed","_beacons","_ownedBeacons"];
+
+_beacons = []; 
+{ 
+	if (_x getVariable ["ownerUID",""] == getPlayerUID player) then 
+	{ 
+		_beacons pushBack _x; 
+	}; 
+} forEach pvar_spawn_beacons; 
+
+_ownedBeacons = count _beacons;
+
 _hasFailed = {
 	private ["_progress", "_failed", "_text"];
 	_progress = _this select 0;
@@ -22,6 +35,7 @@ _hasFailed = {
 		case (!alive player): {};
 		case (doCancelAction) :{doCancelAction = false; _text = ERR_CANCELLED;};
 		case (vehicle player != player): {_text = ERR_IN_VEHICLE};
+		case (_ownedBeacons >= _MaxSpawnbeacons): {_text = MAX_BEACONS};
 		default {
 			_text = format["Spawn Beacon %1%2 Deployed", round(_progress*100), "%"];
 			_failed = false;
@@ -29,51 +43,31 @@ _hasFailed = {
 	};
 	[_failed, _text];
 };
+_success = [MF_ITEMS_SPAWN_BEACON_DURATION, ANIM, _hasFailed, []] call a3w_actions_start;
 
-// Check how many spawn beacons the player already has deployed
-_playerBeaconCntr = 0;
-_uid = getPlayerUID player;
-diag_log format ["Before deploy, pvar_spawn_beacons has %1 items in it", count pvar_spawn_beacons];
-{
-	
-	if (_x getVariable ["ownerUID",""] == _uid) then {
-		_playerBeaconCntr = _playerBeaconCntr + 1;
-	};
-	
-	diag_log format ["Spawn beacon %1 has ownerUID=%2 beaconCntr=%3  max=%4",_forEachIndex, _x getVariable ["ownerUID",""], _playerBeaconCntr, MAX_SPAWN_BEACONS];
-} forEach pvar_spawn_beacons;
+if (_success) then {
+	_uid = getPlayerUID player;
+	// Spawn 2m in front of the player
+	_beacon = createVehicle [MF_ITEMS_SPAWN_BEACON_DEPLOYED_TYPE, [player, [0,2,0]] call relativePos, [], 0, "CAN_COLLIDE"];
+	_beacon setDir (getDir player + 270);
+	_beacon setVariable ["allowDamage", true, true];
+	_beacon setVariable ["a3w_spawnBeacon", true, true];
+	_beacon setVariable ["R3F_LOG_disabled", true];
+	_beacon setVariable ["side", playerSide, true];
+	_beacon setVariable ["ownerName", name player, true];
+	_beacon setVariable ["ownerUID", _uid, true];
+	_beacon setVariable ["packing", false, true];
+	_beacon setVariable ["groupOnly", (playerSide == INDEPENDENT), true];
+	/*{
+		if (_x getVariable ["ownerUID",""] == _uid) then {
+			pvar_spawn_beacons = pvar_spawn_beacons - [_x];
+		};
+	} forEach pvar_spawn_beacons;*/ //Disabled. Was for old respawn menu which only allowed for 5 spawn beacons.
 
-if (_playerBeaconCntr <= MAX_SPAWN_BEACONS) then
-{
-	_success = [MF_ITEMS_SPAWN_BEACON_DURATION, ANIM, _hasFailed, []] call a3w_actions_start;
-
-	if (_success) then {
-		
-		// Spawn 2m in front of the player
-		_beacon = createVehicle [MF_ITEMS_SPAWN_BEACON_DEPLOYED_TYPE, [player, [0,2,0]] call relativePos, [], 0, "CAN_COLLIDE"];
-		_beacon setDir (getDir player + 270);
-		_beacon setVariable ["allowDamage", true, true];
-		_beacon setVariable ["a3w_spawnBeacon", true, true];
-		_beacon setVariable ["R3F_LOG_disabled", true];
-		_beacon setVariable ["side", playerSide, true];
-		_beacon setVariable ["ownerName", name player, true];
-		_beacon setVariable ["ownerUID", _uid, true];
-		_beacon setVariable ["packing", false, true];
-		_beacon setVariable ["groupOnly", (playerSide == INDEPENDENT), true];
-		{
-			if (_x getVariable ["ownerUID",""] == _uid) then {
-				pvar_spawn_beacons = pvar_spawn_beacons - [_x];
-			};
-		} forEach pvar_spawn_beacons;
-
-		pvar_spawn_beacons pushBack _beacon;
-		publicVariable "pvar_spawn_beacons";
-		pvar_manualObjectSave = netId _beacon;
-		publicVariableServer "pvar_manualObjectSave";
-		["You placed the Spawn Beacon successfully!", 5] call mf_notify_client;
-	};
-	_success;
-} else {
-	["You already have the maximum number of spawn beacons deployed.", 5] call mf_notify_client;
-	false;
-}
+	pvar_spawn_beacons pushBack _beacon;
+	publicVariable "pvar_spawn_beacons";
+	pvar_manualObjectSave = netId _beacon;
+	publicVariableServer "pvar_manualObjectSave";
+	["You placed the Spawn Beacon successfully!", 5] call mf_notify_client;
+};
+_success;

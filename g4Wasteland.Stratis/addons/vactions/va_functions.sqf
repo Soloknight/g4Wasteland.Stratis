@@ -1,7 +1,3 @@
-// Motavar@judgement.net:  Changed menu position from 10 to 0 to put vehicle lock/unlock at bottom of menu listing
-// Motavar@judgement.net:  This was recommended by the community as lock/unlock kills players who like to "get out" as top action
-
-
 if (!isNil "va_actions_functions_defined") exitWith {};
 diag_log format["Loading vehicle actions functions ..."];
 #include "macro.h"

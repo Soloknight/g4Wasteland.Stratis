@@ -4,7 +4,7 @@
 //	@file Name: fn_sellTruck.sqf
 //	@file Author: Gigatek, Wiking, Lodac
 
-#define SELL_TRUCK_DISTANCE 20
+#define SELL_TRUCK_DISTANCE 30
 #define SELLTRUCK_PRICE_RELATIONSHIP 2
 
 // Check if mutex lock is active.

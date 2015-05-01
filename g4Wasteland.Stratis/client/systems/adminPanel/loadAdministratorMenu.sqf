@@ -22,6 +22,9 @@ if ([_uid, 2] call isAdmin) then {
 					"Vehicle Management",
 					"Spectator Cam",
 					"Player Markers",
+					"Teleport",
+					"Teleport player to me",
+					"Teleport me to player",
 					"Tags"
 	];
 

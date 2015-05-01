@@ -22,13 +22,9 @@ while {pselect5 == ""} do
 if (pselect5 != "exit") then
 {
 	_name = pselect5;
-	{
-		if(name _x == _name) then
-		{
-			hint format ["Teleporting %1", _name];
-			_x attachTo [vehicle player, [2, 2, 0]];
-			sleep 0.25;
-			detach _x;
-		};
-	} forEach entities "CAManBase";
+	{    
+	if (isPlayer _x && (name _x == _name)) then {    
+          vehicle _x setPos (position player);
+	}  
+	} forEach playableUnits;
 };

@@ -1,6 +1,3 @@
-// ******************************************************************************************
-// * This project is licensed under the GNU Affero GPL v3. Copyright © 2014 A3Wasteland.com *
-// ******************************************************************************************
 //	@file Version: 1.0
 //	@file Name: populateGunStore.sqf
 //	@file Author: [404] Deadbeat, [KoS] His_Shadow, AgentRev
@@ -56,23 +53,33 @@ switch(_switch) do
 	};
 	case 3:
 	{
+		_itemsArray = call sniperArray;
+		_showAmmo = true;
+	};
+	case 4:
+	{
 		_itemsArray = call lmgArray;
 		_showAmmo = true;
 	};
 	case 5:
 	{
-		_itemsArray = call launcherArray;
+		_itemsArray = call shotgunArray;
 		_showAmmo = true;
 	};
 	case 6:
 	{
-		_itemsArray = call throwputArray;
+		_itemsArray = call launcherArray;
+		_showAmmo = true;
 	};
 	case 7:
 	{
-		_itemsArray = call accessoriesArray;
+		_itemsArray = call throwputArray;
 	};
 	case 8:
+	{
+		_itemsArray = call accessoriesArray;
+	};
+	case 9:
 	{
 		_itemsArray = [];
 

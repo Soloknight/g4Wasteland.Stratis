@@ -11,7 +11,6 @@
 #define hud_vehicle_idc 3601
 #define hud_activity_icon_idc 3602
 #define hud_activity_textbox_idc 3603
-//#define hud_server_idc 3604
 
 scriptName "playerHud";
 
@@ -108,11 +107,6 @@ while {true} do
 	_hudVehicle = _ui displayCtrl hud_vehicle_idc;
 	_hudActivityIcon = _ui displayCtrl hud_activity_icon_idc;
 	_hudActivityTextbox = _ui displayCtrl hud_activity_textbox_idc;
-	
-	//_serverString = format ["<t color='#A0FFFFFF'>Server: |g4| Wasteland Altis</t>", call A3W_extDB_ServerID];
-	//_serverString = format ["%1<br/><t color='#A0FFFFFF'>Teamspeak: ts.g4-gamers.com<br/>Website: G4-GAMERS.COM</t>",_serverString];
-	//_hudServerTextbox ctrlSetStructuredText parseText _serverString;
-	//_hudServerTextbox ctrlCommit 0;
 
 	//Calculate Health 0 - 100
 	_health = ((1 - damage player) * 100) max 0;
@@ -144,12 +138,12 @@ while {true} do
 	_minimumBRs = 5;
 	_strArray = [];
 
-	if (_atmEnabled) then { _strArray pushBack format ["%1 <img size='0.7' image='client\icons\suatmm_icon.paa'/>", [player getVariable ["bmoney", 0]] call fn_numbersText] };
-	_strArray pushBack format ["%1 <img size='0.7' image='client\icons\money.paa'/>", [player getVariable ["cmoney", 0]] call fn_numbersText];
-	_strArray pushBack format ["%1 <img size='0.7' image='client\icons\water.paa'/>", ceil (thirstLevel max 0)];
-	_strArray pushBack format ["%1 <img size='0.7' image='client\icons\food.paa'/>", ceil (hungerLevel max 0)];
-	if (!_unlimitedStamina) then { _strArray pushBack format ["%1 <img size='0.7' image='client\icons\running_man.paa'/>", 100 - ceil ((getFatigue player) * 100)] };
-	_strArray pushBack format ["<t color='%1'>%2</t> <img size='0.7' image='client\icons\health.paa'/>", _healthTextColor, _health];
+//	if (_atmEnabled) then { _strArray pushBack format ["%1 <img size='0.7' image='client\icons\suatmm_icon.paa'/>", [player getVariable ["bmoney", 0]] call fn_numbersText] };
+//	_strArray pushBack format ["%1 <img size='0.7' image='client\icons\money.paa'/>", [player getVariable ["cmoney", 0]] call fn_numbersText];
+//	_strArray pushBack format ["%1 <img size='0.7' image='client\icons\energydrink.paa'/>", ceil (thirstLevel max 0)];
+//	_strArray pushBack format ["%1 <img size='0.7' image='client\icons\cannedfood.paa'/>", ceil (hungerLevel max 0)];
+//	if (!_unlimitedStamina) then { _strArray pushBack format ["%1 <img size='0.7' image='client\icons\running_man.paa'/>", 100 - ceil ((getFatigue player) * 100)] };
+//	_strArray pushBack format ["<t color='%1'>%2</t> <img size='0.7' image='client\icons\health.paa'/>", _healthTextColor, _health];
 
 	_str = "";
 

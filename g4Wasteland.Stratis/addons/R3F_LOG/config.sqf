@@ -246,7 +246,12 @@ R3F_LOG_CFG_can_tow = R3F_LOG_CFG_can_tow +
 	"Truck_02_base_F",
 	"Truck_03_base_F",
 	"Wheeled_APC_F",
-	"Tank_F",
+	"APC_Tracked_01_base_F",
+	"APC_Tracked_02_base_F",
+	"APC_Tracked_03_base_F",
+	"MBT_01_base_F",
+	"MBT_02_base_F",
+	"MBT_03_base_F",
 	"Boat_Armed_01_base_F"
 ];
 
@@ -264,11 +269,21 @@ R3F_LOG_CFG_can_be_towed = R3F_LOG_CFG_can_be_towed +
 	"MRAP_01_base_F",
 	"MRAP_02_base_F",
 	"MRAP_03_base_F",
+	"Truck_01_base_F",
+	"Truck_02_base_F",
+	"Truck_03_base_F",
 	"UGV_01_base_F",
 	"SDV_01_base_F",
 	"Boat_Civil_01_base_F",
 	"Boat_Armed_01_base_F",
 	"Helicopter_Base_F",
+	"Wheeled_APC_F",
+	"APC_Tracked_01_base_F",
+	"APC_Tracked_02_base_F",
+	"APC_Tracked_03_base_F",
+	"MBT_01_base_F",
+	"MBT_02_base_F",
+	"MBT_03_base_F",
 	"Plane"
 ];
 
@@ -306,7 +321,13 @@ R3F_LOG_CFG_can_be_lifted = R3F_LOG_CFG_can_be_lifted +
 	"SDV_01_base_F",
 	"Boat_Civil_01_base_F",
 	"Boat_Armed_01_base_F",
-	"Wheeled_APC_F"
+	"Wheeled_APC_F",
+	"APC_Tracked_01_base_F",
+	"APC_Tracked_02_base_F",
+	"APC_Tracked_03_base_F",
+	"MBT_01_base_F",
+	"MBT_02_base_F",
+	"MBT_03_base_F"
 ];
 
 
@@ -373,9 +394,9 @@ R3F_LOG_CFG_can_transport_cargo = R3F_LOG_CFG_can_transport_cargo +
 R3F_LOG_CFG_can_be_transported_cargo = R3F_LOG_CFG_can_be_transported_cargo +
 [
 	// e.g. : ["MyTransportableObjectClassName1", itsCost], ["MyTransportableObjectClassName2", itsCost]
-	["Land_Device_assembled_F", 10], //Re Locker
 	["Static_Designator_01_base_F", 2],
-	["Static_Designator_02_base_F", 2],	
+	["Static_Designator_02_base_F", 2],
+	["Land_Device_assembled_F", 10], //Re Locker
 	["StaticWeapon", 5],
 	["Box_NATO_AmmoVeh_F", 10],
 	["B_supplyCrate_F", 5],
@@ -424,6 +445,7 @@ R3F_LOG_CFG_can_be_transported_cargo = R3F_LOG_CFG_can_be_transported_cargo +
 	["Land_Pipes_large_F", 5],
 	["Land_RampConcreteHigh_F", 6],
 	["Land_RampConcrete_F", 5],
+	["BlockConcrete_F", 25],
 	["Land_Razorwire_F", 5],
 	["Land_Sacks_goods_F", 2],
 	["Land_Scaffolding_F", 5],
@@ -462,6 +484,8 @@ R3F_LOG_CFG_can_be_transported_cargo = R3F_LOG_CFG_can_be_transported_cargo +
 R3F_LOG_CFG_can_be_moved_by_player = R3F_LOG_CFG_can_be_moved_by_player +
 [
 	// e.g. : "MyMovableObjectClassName1", "MyMovableObjectClassName2"
+	"Static_Designator_01_base_F",
+	"Static_Designator_02_base_F",
 	"Land_Device_assembled_F", //relocker
 	"StaticWeapon",
 	"ReammoBox_F",
@@ -509,6 +533,7 @@ R3F_LOG_CFG_can_be_moved_by_player = R3F_LOG_CFG_can_be_moved_by_player +
 	"Land_Pipes_large_F",
 	"Land_RampConcreteHigh_F",
 	"Land_RampConcrete_F",
+	"BlockConcrete_F",
 	"Land_Razorwire_F",
 	"Land_Sacks_goods_F",
 	"Land_Scaffolding_F",

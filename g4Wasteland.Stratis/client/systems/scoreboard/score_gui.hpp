@@ -49,7 +49,7 @@ class ScoreGUI : IGUIBack
 		class PListTopBG : IGUIBack
 		{
 			idc = -1;
-			colorBackground[] = {0.25, 0.51, 0.96, 0.8};
+			colorBackground[] = {0.45,0.005,0,1};
 
 			#define PListTopBG_H (0.05 * Y_SCALE)
 
@@ -62,7 +62,7 @@ class ScoreGUI : IGUIBack
 		class PListTopText : w_RscTextCenter
 		{
 			idc = -1;
-			text = "Players";
+			text = "G4-Gamers Gaming Community";
 			sizeEx = 0.06 * TEXT_SCALE;
 
 			#define PListTopText_Y (PListBG_Y + CENTER(PListTopBG_H, PListTopBG_H))
@@ -394,7 +394,7 @@ class ScoreGUI : IGUIBack
 		class TListTopBG : IGUIBack
 		{
 			idc = -1;
-			colorBackground[] = {0.25, 0.51, 0.96, 0.8};
+			colorBackground[] = {0.45,0.005,0,1};
 
 			#define TListTopBG_H (0.05 * Y_SCALE)
 

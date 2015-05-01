@@ -59,10 +59,10 @@ switch (_donatorLevel) do
 			// _player addHandgunItem "optic_Yorris";
 			_player addMagazine "11Rnd_45ACP_Mag";
 			_player addMagazine "11Rnd_45ACP_Mag";
-			_player addItem "Medikit";
+			_player addItem "";
 			_player addWeapon "Rangefinder";
-			_player addItemToBackpack "FirstAidKit";
-			_player addItemToBackpack "FirstAidKit";
+			_player addItemToBackpack "";
+			_player addItemToBackpack "";
 			// _player addHeadgear "H_HelmetB";
 			_player addGoggles "G_mas_wpn_wrap_mask_t";
 			_player linkItem "ItemGPS";
@@ -88,11 +88,11 @@ switch (_donatorLevel) do
 			// _player addHandgunItem "optic_Yorris";
 			_player addMagazine "11Rnd_45ACP_Mag";
 			_player addMagazine "11Rnd_45ACP_Mag";
-			// _player addItem "Medikit";
+			// _player addItem "";
 			_player addWeapon "Rangefinder";
 			_player linkItem "ItemGPS";
-			_player addItemToBackpack "FirstAidKit";
-			_player addItemToBackpack "FirstAidKit";
+			_player addItemToBackpack "";
+			_player addItemToBackpack "";
 			// _player addHeadgear "H_HelmetB";
 			_player addItem "NVGoggles";
 			_player addGoggles "G_mas_wpn_wrap_mask_t";			
@@ -117,7 +117,7 @@ switch (_donatorLevel) do
 			_player addHandgunItem "muzzle_snds_acp";
 			_player addMagazine "11Rnd_45ACP_Mag";
 			_player addMagazine "11Rnd_45ACP_Mag";
-			_player addItem "Medikit";
+			//_player addItem "Medikit";
 			_player addWeapon "Laserdesignator";
 			_player linkItem "ItemGPS";
 			// _player addItemToBackpack "FirstAidKit";
@@ -146,7 +146,7 @@ switch (_donatorLevel) do
 			_player addHandgunItem "muzzle_snds_acp";
 			_player addMagazine "11Rnd_45ACP_Mag";
 			_player addMagazine "11Rnd_45ACP_Mag";
-			_player addItem "Medikit";
+			//_player addItem "Medikit";
 			_player addWeapon "Laserdesignator";
 			_player linkItem "ItemGPS";
 			// _player addItemToBackpack "FirstAidKit";
@@ -175,7 +175,7 @@ switch (_donatorLevel) do
 			_player addHandgunItem "muzzle_snds_acp";
 			_player addMagazine "11Rnd_45ACP_Mag";
 			_player addMagazine "11Rnd_45ACP_Mag";
-			_player addItem "Medikit";
+			//_player addItem "Medikit";
 			_player addWeapon "Laserdesignator";
 			_player linkItem "ItemGPS";
 			// _player addItemToBackpack "FirstAidKit";
@@ -204,7 +204,7 @@ switch (_donatorLevel) do
 			_player addHandgunItem "muzzle_snds_acp";
 			_player addMagazine "11Rnd_45ACP_Mag";
 			_player addMagazine "11Rnd_45ACP_Mag";
-			_player addItem "Medikit";
+			//_player addItem "Medikit";
 			_player addWeapon "Laserdesignator";
 			_player linkItem "ItemGPS";
 			// _player addItemToBackpack "FirstAidKit";
@@ -233,7 +233,7 @@ switch (_donatorLevel) do
 			_player addHandgunItem "muzzle_snds_acp";
 			_player addMagazine "11Rnd_45ACP_Mag";
 			_player addMagazine "11Rnd_45ACP_Mag";
-			_player addItem "Medikit";
+			//_player addItem "Medikit";
 			_player addWeapon "Laserdesignator";
 			_player linkItem "ItemGPS";
 			// _player addItemToBackpack "FirstAidKit";
@@ -263,7 +263,7 @@ switch (_donatorLevel) do
 			_player addHandgunItem "muzzle_snds_acp";
 			_player addMagazine "11Rnd_45ACP_Mag";
 			_player addMagazine "11Rnd_45ACP_Mag";
-			_player addItem "Medikit";
+			//_player addItem "Medikit";
 			_player addWeapon "Laserdesignator";
 			_player linkItem "ItemGPS";
 			// _player addItemToBackpack "FirstAidKit";
@@ -292,7 +292,7 @@ switch (_donatorLevel) do
 			_player addHandgunItem "muzzle_snds_acp";
 			_player addMagazine "11Rnd_45ACP_Mag";
 			_player addMagazine "11Rnd_45ACP_Mag";
-			_player addItem "Medikit";
+			//_player addItem "Medikit";
 			_player addWeapon "Laserdesignator";
 			_player linkItem "ItemGPS";
 			// _player addItemToBackpack "FirstAidKit";

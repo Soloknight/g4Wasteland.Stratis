@@ -4,7 +4,7 @@
 //	@file Name: setupResupplyTruck.sqf
 //	@file Author: AgentRev
 
-_this addAction ["<img image='client\icons\store.paa'/> Change Ownership", "client\functions\fn_ownertruck.sqf", [], 51, true, true, "", "vehicle _this != _this && _this distance _target <= 20"];
+_this addAction ["<img image='client\icons\store.paa'/> Change Ownership", "client\functions\fn_ownertruck.sqf", [], 51, true, true, "", "vehicle _this != _this && _this distance _target <= 30"];
 
 if (!isServer) exitWith {};
 

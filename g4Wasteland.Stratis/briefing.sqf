@@ -20,6 +20,7 @@ player createDiaryRecord ["officers",
 "
 <br/> Soloknight
 <br/> Piece
+<br/> Clam
 <br/> Shannon
 <br/> Moon
 <br/> Tbone
@@ -109,7 +110,23 @@ player createDiaryRecord ["features",
 <br/> use our forum on our website or contact form
 "
 ]];
-
+player createDiaryRecord ["changelog",
+[
+"g4-gamers v1.6",
+"
+<br/>[Added] Marksmen DLC content
+<br/>[Added] Base locker system 1.6
+<br/>[Added] Prevent usage of commander camera
+<br/>[Added] Emergency eject hotkey (Ctrl + " + actionKeysNames "GetOut" + ")
+<br/>[Added] Restricted UAV connection to owner's group
+<br/>[Changed] Improved purchased vehicle setup time
+<br/>[Changed] Updated antihack
+<br/>[Fixed] Corpses not being ejected from vehicles
+<br/>[Fixed] Thermal imaging not working for UAVs
+<br/>[Fixed] Fixed Vendors
+<br/>[Fixed] Various minor bugfixes and optimizations
+"
+]];
 player createDiaryRecord ["changelog",
 [
 "g4-gamers v1.5.2",

@@ -8,17 +8,15 @@
 
 client_firstSpawn = true;
 
-[] execVM "client\functions\welcomeMessage.sqf";
 //set client side view distance on spawn
-systemChat format["Optimizing Shadow Settings"];
+//systemChat format["Optimizing Shadow Settings"];
 setShadowDistance 0;
 //setObjectViewDistance 900;
 //setTerrainGrid 40;
 	
 [format ['Hello %1! <br/>Please DO NOT Spam the Sidechat, use Groups.<br/>Have fun and play fair!', name player], "Welcome to g4-gamers.com Stratis"] spawn BIS_fnc_guiMessage;
 	
-[] execVM "addons\credits\welcome.sqf";
-
+[] execVM "addons\welcomeMessage\welcomeMessage.sqf";
 // GoT addition - if this is the first spawn start the loyalty-timer
 if(format["%1",firstspawn] == format["%1","1"]) then 
 {

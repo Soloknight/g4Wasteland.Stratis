@@ -321,6 +321,14 @@ class outlw_MR_RscButtonMenu
 		0.09,
 		1
 	};
+	font = "PuristaMedium";
+
+	class AttributesImage
+	{
+		font = "PuristaMedium";
+		color = "#E5E5E5";
+		align = "left";
+	};
 };
 class outlw_MR_RscControlsGroup
 {
@@ -413,7 +421,3 @@ class outlw_MR_RscCombo
 	font = "PuristaMedium";
 	sizeEx = "(((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1)";
 };
-
-
-
-

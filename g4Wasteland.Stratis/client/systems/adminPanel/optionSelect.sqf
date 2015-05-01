@@ -43,10 +43,9 @@ if (_uid call isAdmin) then
 					if (isnil {RscSpectator_camera}) then {RscSpectator_allowFreeCam = true; cutrsc ['RscSpectator','plain'];if (!isNil "notifyAdminMenu") then { ["SpectatorCam", "used"] call notifyAdminMenu };} else {cuttext ['','plain']};
 			    };
 			    case 3: //Tags
-			    {
+				{
 					execVM "client\systems\adminPanel\playerTags.sqf";
-					if (!isNil "notifyAdminMenu") then { ["PlayerTag","used"] call notifyAdminMenu };
-			    };
+				};
 			    case 4: //Teleport
 			    {
 	                closeDialog 0;
@@ -64,25 +63,29 @@ if (_uid call isAdmin) then
 					closeDialog 0;
 					execVM "client\systems\adminPanel\tptome.sqf";
 				};
-	            
-				case 6: //Money
+				case 6: //Teleport me to player
+				{
+					closeDialog 0;
+					execVM "client\systems\adminPanel\tpmeto.sqf";
+				};
+				case 7: //Money
 			    {
 					_money = 20000;
 					player setVariable ["cmoney", (player getVariable ["cmoney",0]) + _money, true];
 					if (!isNil "notifyAdminMenu") then { ["money", _money] call notifyAdminMenu };
 			    };
 				
-	            case 7: //Debug Menu
+	            case 8: //Debug Menu
 			    {
 	            	closeDialog 0;
 	                execVM "client\systems\adminPanel\loadDebugMenu.sqf";
 			    };
-				case 8: //Object search menu
+				case 9: //Object search menu
 			    {
 	            	closeDialog 0;
 	                execVM "client\systems\adminPanel\loadObjectSearch.sqf";
 			    };
-			    case 9: // toggle God mode
+			    case 10: // toggle God mode
 			    {
 			    	execVM "client\systems\adminPanel\toggleGodMode.sqf";
 			    };
@@ -109,28 +112,52 @@ if (_uid call isAdmin) then
 					closeDialog 0;
 					execVM "client\systems\vehicleStore\loadVehicleStore.sqf";
 				};
-			    case 3: //Access Respawn Dialog
-			    {
-	                closeDialog 0;
-					true spawn client_respawnDialog;
-			    };
-			    case 4: //Access Proving Grounds
-			    {
-	                closeDialog 0;
-					createDialog "balca_debug_main";
-			    };
-	            case 5: //Access ATM Dialog
+				case 3: //Access ATM Dialog
 				{
 					closeDialog 0;
 					call mf_items_atm_access;
 				};
+				case 4: //Access Respawn Dialog
+				{
+					closeDialog 0;
+					true spawn client_respawnDialog;
+				};
+				case 5: //Access Proving Grounds
+				{
+					closeDialog 0;
+					createDialog "balca_debug_main";
+				};
 				case 6: //Show server FPS function
-			    {      
+				{
 					hint format["Server FPS: %1",serverFPS];
-			    };
-	            case 7: //Test Function
-			    {
-                    _group = createGroup civilian;
+				};
+				case 7: //Unlock Base Objects within 50m - Requested by PatPgtips
+				{
+					_confirmMsg = format ["This will unlock all base objects within 50m<br/>"];
+					_confirmMsg = _confirmMsg + format ["<br/>Unlock Objects (50m)? "];
+
+					if ([parseText _confirmMsg, "Confirm", "CONFIRM", true] call BIS_fnc_guiMessage) then
+					{
+					{_x setVariable ["objectLocked",false,true];} forEach (position player nearObjects ["All",50]);
+					hint format["You have unlocked all base objects within 50m of the area"];
+					};
+				 };
+				case 8: //Delete Unlocked Base Objects within 50m - Requested by PatPgtips
+				{
+					_confirmMsg = format ["This will delete all unlocked base objects within 50m<br/>"];
+					_confirmMsg = _confirmMsg + format ["<br/>Delete Objects?"];
+
+					if ([parseText _confirmMsg, "Confirm", "CONFIRM", true] call BIS_fnc_guiMessage) then
+					{
+					
+					{if !(_x getVariable ["objectLocked",false]) then {deleteVehicle _x};} forEach (position player nearObjects ["All",50]);
+					hint format["You have deleted all unlocked base objects within 50m of the area"];
+					};
+					
+				};
+				case 9: //Test Function
+				{
+					_group = createGroup civilian;
 					_leader = _group createunit ["C_man_polo_1_F", getPos player, [], 0.5, "Form"];
 
 					_leader addMagazine "RPG32_HE_F";

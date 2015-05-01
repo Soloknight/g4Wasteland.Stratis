@@ -10,7 +10,7 @@ if(R3F_LOG_mutex_local_verrou) exitWith {
 	player globalChat STR_R3F_LOG_mutex_action_en_cours;
 };
 
-private["_locking", "_object", "_lockState", "_lockDuration", "_stringEscapePercent", "_iteration", "_unlockDuration", "_totalDuration", "_checks", "_success", "_isProtected", "_isAllowed"];
+private["_locking", "_object", "_lockState", "_lockDuration", "_stringEscapePercent", "_iteration", "_unlockDuration", "_totalDuration", "_checks", "_success","_IsProtected","_IsAllowed"];
 
 _object = _this select 0;
 _lockState = _this select 3;
@@ -34,8 +34,12 @@ if ((_IsProtected) && !(_IsAllowed)) exitwith {
 };
 //End donator part
 
-if (((_object distance getMarkerPos  "_BluBaseMarker") < 100) && !(side player == blufor)) exitwith {
+if (((_object distance getMarkerPos "_BluBaseMarker") < 100) && !(side player == blufor)) exitwith {
 	hint "This base can only be changed by Blufor"; R3F_LOG_mutex_local_verrou = false;
+};
+
+if (((_object distance getMarkerPos "_OPFBaseMarker") < 100) && !(side player == opfor)) exitwith {
+	hint "This base can only be changed by Opfor"; R3F_LOG_mutex_local_verrou = false;
 };
 
 _totalDuration = 0;
@@ -71,7 +75,7 @@ switch (_lockState) do
 				case (vehicle player != player): { _text = "Action failed! You can't do this in a vehicle" };
 				case (!isNull (_object getVariable ["R3F_LOG_est_transporte_par", objNull])): { _text = "Action failed! Somebody moved the object" };
 				case (_object getVariable ["objectLocked", false]): { _text = "Somebody else locked it before you" };
-				case (_reLocker getVariable ["lockDown", false]): { _text = "You cannot lock objects close to a base under Lock Down" }; // Re Locker
+				case (_reLocker getVariable ["lockDown", false] && alive _reLocker): { _text = "You cannot lock objects close to a base under Lock Down" }; // Re Locker
 				default
 				{
 					_failed = false;
@@ -177,7 +181,7 @@ switch (_lockState) do
 		if (_success) then
 		{
 			_object setVariable ["objectLocked", false, true];
-			//_object setVariable ["ownerUID", nil, true];
+			_object setVariable ["ownerUID", nil, true];
 			_object setVariable ["baseSaving_hoursAlive", nil, true];
 			_object setVariable ["baseSaving_spawningTime", nil, true];
 

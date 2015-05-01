@@ -15,6 +15,7 @@ _playerMoney = player getVariable "cmoney";
 _price = _ownedObjects * 100;
 _playerMoney = player getVariable "cmoney";
 
+
 /*
 if (isNIL "_relockedTime") exitWith
 {

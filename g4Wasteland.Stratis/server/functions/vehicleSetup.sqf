@@ -24,9 +24,9 @@ clearBackpackCargoGlobal _vehicle;
 
 // Disable thermal on all manned vehicles
 if (getNumber (configFile >> "CfgVehicles" >> _class >> "isUav") < 1) then
-{
-	_vehicle disableTIEquipment true;
-};
+ {
+ 	_vehicle disableTIEquipment true;
+ };
 
 _vehicle setUnloadInCombat [true, false]; // Prevent AI gunners from getting out of vehicle while in combat if it's in working condition
 
@@ -67,7 +67,7 @@ _vehicle addEventHandler ["Killed",
 	};
 }];
 
-if ({_class isKindOf _x} count ["Air","UGV_01_base_F"] > 0) then
+if ({_class isKindOf _x} count ["Air","LandVehicle"] > 0) then
 {
 	[netId _vehicle, "A3W_fnc_setupAntiExplode", true] call A3W_fnc_MP;
 };
